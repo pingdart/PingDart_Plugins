@@ -1,4 +1,4 @@
-// File: /Users/malleravindra/Projucts/PingDart Chat/App/src/app/api/auth/microsoft/callback/page.tsx
+// File: /Volumes/USB/Projucts/PingDart Chat/App/src/app/api/auth/microsoft/callback/page.tsx
 import * as entry from '../../../../../../../src/app/api/auth/microsoft/callback/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

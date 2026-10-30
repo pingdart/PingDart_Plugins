@@ -57,7 +57,7 @@
   "../node_modules/jspdf/dist/jspdf.es.min.js -> dompurify": {
     "id": 82931,
     "files": [
-      "static/chunks/2931.379acb5f2f07dff1.js"
+      "static/chunks/2931.0a8a370bed3c87d1.js"
     ]
   },
   "../node_modules/jspdf/dist/jspdf.es.min.js -> html2canvas": {
@@ -130,7 +130,7 @@
     "id": 26221,
     "files": [
       "static/chunks/5746-3d5b18961ece1de8.js",
-      "static/chunks/6221.c2b4154ace346a8e.js",
+      "static/chunks/6221.018846a154fb5f0a.js",
       "static/chunks/1479.2c596bdb65a3182f.js"
     ]
   },
@@ -161,30 +161,30 @@
       "static/chunks/164f4fb6-23ea50d4c50b2b58.js",
       "static/chunks/280273a7-7e2fba95c2931159.js",
       "static/chunks/2619-b8db57ac19da49ac.js",
-      "static/chunks/4220-847c6c744dd339a5.js",
+      "static/chunks/7241-894fa0b12e1855d6.js",
       "static/chunks/7905.d96860854b49007e.js",
       "static/chunks/4577-f727140c240e91f8.js",
-      "static/chunks/1603-7f4df0910cd0d097.js",
-      "static/chunks/2931.379acb5f2f07dff1.js",
+      "static/chunks/5114-464d4f53bb055cdc.js",
+      "static/chunks/2931.0a8a370bed3c87d1.js",
       "static/chunks/1029.3ef9e7fa38612fae.js",
       "static/chunks/7029-d2938e58bcd8e3c3.js",
       "static/chunks/4484.f388be2ce207c346.js",
       "static/chunks/5274-2b462317eece06dd.js",
       "static/chunks/854-3634726a69bdffdf.js",
-      "static/chunks/5554-b52ffd943087ed11.js",
+      "static/chunks/5554-d589b3ca1c5c1800.js",
       "static/chunks/5746-3d5b18961ece1de8.js",
-      "static/chunks/6221.c2b4154ace346a8e.js",
+      "static/chunks/6221.018846a154fb5f0a.js",
       "static/chunks/223-a3cb89e097b9bf96.js",
-      "static/chunks/7735.a47f58a14a029139.js",
+      "static/chunks/7735.c1df3027e16aa62b.js",
       "static/chunks/2201-5f802610b68c3af7.js",
-      "static/chunks/382.70b71d582ac9088b.js",
-      "static/chunks/5851.7455cd0cc50d5037.js"
+      "static/chunks/382.709b4e6a83e21ae6.js",
+      "static/chunks/1814.50da89a1650fdfa0.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./modules/AiBlogGenerator/AiBlogGeneratorScreen": {
     "id": 96797,
     "files": [
-      "static/chunks/6797.f99166c7fbd4f780.js"
+      "static/chunks/6797.225ebf97c98a4276.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./modules/DynamicModuleRenderer": {
@@ -199,7 +199,7 @@
     "files": [
       "static/chunks/2619-b8db57ac19da49ac.js",
       "static/chunks/5274-2b462317eece06dd.js",
-      "static/chunks/1296.86236f7d27b0a2e3.js"
+      "static/chunks/1296.0f66e6a9a7e4b38a.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./modules/crm/CrmScreen": {
@@ -212,20 +212,20 @@
       "static/chunks/4577-f727140c240e91f8.js",
       "static/chunks/8327.3ec5843e8d42b64f.js",
       "static/chunks/5274-2b462317eece06dd.js",
-      "static/chunks/5554-b52ffd943087ed11.js",
+      "static/chunks/5554-d589b3ca1c5c1800.js",
       "static/chunks/1621.e7e306210b119c46.js",
       "static/chunks/1050.0ba22d0576096ff3.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./modules/hrm/HrmScreen": {
-    "id": 47240,
+    "id": 51374,
     "files": [
-      "static/chunks/4220-847c6c744dd339a5.js",
+      "static/chunks/7241-894fa0b12e1855d6.js",
       "static/chunks/7905.d96860854b49007e.js",
       "static/chunks/4153-2e3227d5b9db6cb5.js",
+      "static/chunks/6318.2521329ed128d156.js",
       "static/chunks/5274-2b462317eece06dd.js",
-      "static/chunks/7240.1cd6606ae4f157ae.js",
-      "static/chunks/9332.de95aa6a2fd9e5e5.js"
+      "static/chunks/1374.bb428810b3dfcc47.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./modules/pingdart-code/PingDartCodeScreen": {
@@ -235,11 +235,19 @@
       "static/chunks/7918.39bd81158e3f90c1.js"
     ]
   },
+  "app/user/components/ModuleScreenRenderer.tsx -> ./modules/pj-ministries/PJStephenPaulScreen": {
+    "id": 12859,
+    "files": [
+      "static/chunks/3153-e64ac4818944a32c.js",
+      "static/chunks/8028.0ec0678e4e68464d.js",
+      "static/chunks/2859.979cb3e0943377f8.js"
+    ]
+  },
   "app/user/components/ModuleScreenRenderer.tsx -> ./modules/reseller/ResellerScreen": {
     "id": 4532,
     "files": [
-      "static/chunks/3153-a31e6e192173abd3.js",
-      "static/chunks/6669.dbf96b38e1d6c972.js",
+      "static/chunks/3153-e64ac4818944a32c.js",
+      "static/chunks/6669.8f9892fa28f6944b.js",
       "static/chunks/5274-2b462317eece06dd.js",
       "static/chunks/4532.6bcafadfcfdced3d.js"
     ]
@@ -272,7 +280,7 @@
     "id": 66326,
     "files": [
       "static/chunks/8533.fd9d6035bd35ccc1.js",
-      "static/chunks/936-99d428037612e461.js",
+      "static/chunks/936-164f507ef03e3d97.js",
       "static/chunks/6874-23ee546c188e73ed.js",
       "static/chunks/4775.e322910dfa9f0233.js",
       "static/chunks/1003.8575225755687aab.js",
@@ -294,15 +302,15 @@
   "app/user/components/ModuleScreenRenderer.tsx -> ./screens/HomeScreen": {
     "id": 92368,
     "files": [
-      "static/chunks/3153-a31e6e192173abd3.js",
-      "static/chunks/2861.62f07e9672d96fc9.js",
-      "static/chunks/4814.e6787853dc994061.js",
+      "static/chunks/3153-e64ac4818944a32c.js",
+      "static/chunks/2861.74cb2a2a78963144.js",
+      "static/chunks/4814.fc89b7129da1aee6.js",
       "static/chunks/5746-3d5b18961ece1de8.js",
-      "static/chunks/936-99d428037612e461.js",
+      "static/chunks/936-164f507ef03e3d97.js",
       "static/chunks/6874-23ee546c188e73ed.js",
-      "static/chunks/1222.ea6ccad94fa8d20c.js",
-      "static/chunks/9324.ac1517f90c8ef38a.js",
-      "static/chunks/2368.6be0ac3cbe4951e5.js"
+      "static/chunks/1222.afe7ebd7e53605e0.js",
+      "static/chunks/70.6a299b5b52e24af5.js",
+      "static/chunks/2368.d1b75f7d92169373.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./screens/LinkedDevicesScreen": {
@@ -310,20 +318,20 @@
     "files": [
       "static/chunks/7cb1fa1f-9c1d16e5e8123936.js",
       "static/chunks/2619-b8db57ac19da49ac.js",
-      "static/chunks/3153-a31e6e192173abd3.js",
+      "static/chunks/3153-e64ac4818944a32c.js",
       "static/chunks/1514-050763042a17108a.js",
       "static/chunks/854-3634726a69bdffdf.js",
       "static/chunks/8921.682b3271d2972ee4.js",
-      "static/chunks/7895.1d5133535d12a3e2.js"
+      "static/chunks/7895.86ad0b70434ea9f6.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./screens/MoreScreen": {
-    "id": 59324,
+    "id": 30070,
     "files": [
-      "static/chunks/3153-a31e6e192173abd3.js",
+      "static/chunks/3153-e64ac4818944a32c.js",
       "static/chunks/5746-3d5b18961ece1de8.js",
-      "static/chunks/9324.ac1517f90c8ef38a.js",
-      "static/chunks/2452.824e25f0d5fc5730.js"
+      "static/chunks/70.6a299b5b52e24af5.js",
+      "static/chunks/2452.050c8f52b0aeb83a.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./screens/NotificationsScreen": {
@@ -336,34 +344,35 @@
   "app/user/components/ModuleScreenRenderer.tsx -> ./screens/ReelsScreen": {
     "id": 71825,
     "files": [
-      "static/chunks/936-99d428037612e461.js",
+      "static/chunks/936-164f507ef03e3d97.js",
       "static/chunks/4775.e322910dfa9f0233.js",
       "static/chunks/5648.3dad0d9e094769bd.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./screens/SettingsScreen": {
-    "id": 57418,
+    "id": 83120,
     "files": [
       "static/chunks/7cb1fa1f-9c1d16e5e8123936.js",
       "static/chunks/70e0d97a.24e011f628c0cea2.js",
       "static/chunks/54a60aa6.8a48f8115301533b.js",
       "static/chunks/2619-b8db57ac19da49ac.js",
-      "static/chunks/3153-a31e6e192173abd3.js",
+      "static/chunks/3153-e64ac4818944a32c.js",
+      "static/chunks/7241-894fa0b12e1855d6.js",
       "static/chunks/1514-050763042a17108a.js",
-      "static/chunks/2861.62f07e9672d96fc9.js",
-      "static/chunks/3740.8f98ac6fc55e946e.js",
+      "static/chunks/2861.74cb2a2a78963144.js",
+      "static/chunks/8742.72ee4d09165f83f3.js",
       "static/chunks/5274-2b462317eece06dd.js",
       "static/chunks/854-3634726a69bdffdf.js",
-      "static/chunks/5554-b52ffd943087ed11.js",
+      "static/chunks/5554-d589b3ca1c5c1800.js",
       "static/chunks/5746-3d5b18961ece1de8.js",
-      "static/chunks/6221.c2b4154ace346a8e.js",
+      "static/chunks/6221.018846a154fb5f0a.js",
       "static/chunks/223-a3cb89e097b9bf96.js",
-      "static/chunks/7735.a47f58a14a029139.js",
+      "static/chunks/7735.c1df3027e16aa62b.js",
       "static/chunks/23.aa19192c6562454f.js",
       "static/chunks/8921.682b3271d2972ee4.js",
       "static/chunks/656.e651250ea86d8ba5.js",
       "static/chunks/2314.666e5bb91779c383.js",
-      "static/chunks/9808.352350a0f148dbd7.js"
+      "static/chunks/9046.5ce69c9d270ad1b0.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./screens/ShopScreen": {
@@ -382,13 +391,13 @@
     "id": 15115,
     "files": [
       "static/chunks/9262.c74407a8c2bd8d24.js",
-      "static/chunks/3629.f8d4f874d1def0ab.js"
+      "static/chunks/3629.3b3c709cb2756ae7.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> ./screens/TikTokImportScreen": {
     "id": 72406,
     "files": [
-      "static/chunks/936-99d428037612e461.js",
+      "static/chunks/936-164f507ef03e3d97.js",
       "static/chunks/2406.681baf5313a5aa58.js"
     ]
   },
@@ -415,10 +424,16 @@
   "app/user/components/ModuleScreenRenderer.tsx -> @/components/diary/AiDiaryModal": {
     "id": 81222,
     "files": [
-      "static/chunks/3153-a31e6e192173abd3.js",
-      "static/chunks/2861.62f07e9672d96fc9.js",
-      "static/chunks/1222.ea6ccad94fa8d20c.js",
-      "static/chunks/6042.8e61574dbe322455.js"
+      "static/chunks/3153-e64ac4818944a32c.js",
+      "static/chunks/2861.74cb2a2a78963144.js",
+      "static/chunks/1222.afe7ebd7e53605e0.js",
+      "static/chunks/6042.2c70f30fa3ba9ae2.js"
+    ]
+  },
+  "app/user/components/ModuleScreenRenderer.tsx -> @/modules/custom/CustomScreen": {
+    "id": 26170,
+    "files": [
+      "static/chunks/3789.d659f1197ed2246a.js"
     ]
   },
   "app/user/components/ModuleScreenRenderer.tsx -> @/services/chatApi": {
@@ -521,7 +536,7 @@
   "app/user/hooks/useNavigation.ts -> @/services/presenceLifecycleManager": {
     "id": 81063,
     "files": [
-      "static/chunks/1063.f945af9d5bc04e66.js"
+      "static/chunks/1063.df25170f51ffa623.js"
     ]
   },
   "app/user/hooks/useNotifications.ts -> @/components/chat/InAppChatToast": {
@@ -553,7 +568,7 @@
   "app/user/hooks/useSocketEvents.ts -> @/services/presenceLifecycleManager": {
     "id": 81063,
     "files": [
-      "static/chunks/1063.f945af9d5bc04e66.js"
+      "static/chunks/1063.df25170f51ffa623.js"
     ]
   },
   "app/user/hooks/useSocketEvents.ts -> @capacitor/app": {
@@ -576,7 +591,7 @@
     "id": 26221,
     "files": [
       "static/chunks/5746-3d5b18961ece1de8.js",
-      "static/chunks/6221.c2b4154ace346a8e.js",
+      "static/chunks/6221.018846a154fb5f0a.js",
       "static/chunks/1479.2c596bdb65a3182f.js"
     ]
   },
@@ -593,24 +608,24 @@
       "static/chunks/164f4fb6-23ea50d4c50b2b58.js",
       "static/chunks/280273a7-7e2fba95c2931159.js",
       "static/chunks/2619-b8db57ac19da49ac.js",
-      "static/chunks/4220-847c6c744dd339a5.js",
+      "static/chunks/7241-894fa0b12e1855d6.js",
       "static/chunks/7905.d96860854b49007e.js",
       "static/chunks/4577-f727140c240e91f8.js",
-      "static/chunks/1603-7f4df0910cd0d097.js",
-      "static/chunks/2931.379acb5f2f07dff1.js",
+      "static/chunks/5114-464d4f53bb055cdc.js",
+      "static/chunks/2931.0a8a370bed3c87d1.js",
       "static/chunks/1029.3ef9e7fa38612fae.js",
       "static/chunks/7029-d2938e58bcd8e3c3.js",
       "static/chunks/4484.f388be2ce207c346.js",
       "static/chunks/5274-2b462317eece06dd.js",
       "static/chunks/854-3634726a69bdffdf.js",
-      "static/chunks/5554-b52ffd943087ed11.js",
+      "static/chunks/5554-d589b3ca1c5c1800.js",
       "static/chunks/5746-3d5b18961ece1de8.js",
-      "static/chunks/6221.c2b4154ace346a8e.js",
+      "static/chunks/6221.018846a154fb5f0a.js",
       "static/chunks/223-a3cb89e097b9bf96.js",
-      "static/chunks/7735.a47f58a14a029139.js",
+      "static/chunks/7735.c1df3027e16aa62b.js",
       "static/chunks/2201-5f802610b68c3af7.js",
-      "static/chunks/382.70b71d582ac9088b.js",
-      "static/chunks/5851.7455cd0cc50d5037.js"
+      "static/chunks/382.709b4e6a83e21ae6.js",
+      "static/chunks/1814.50da89a1650fdfa0.js"
     ]
   },
   "app/user/page.tsx -> ./components/screens/CallsScreen": {
@@ -629,7 +644,7 @@
     "id": 66326,
     "files": [
       "static/chunks/8533.fd9d6035bd35ccc1.js",
-      "static/chunks/936-99d428037612e461.js",
+      "static/chunks/936-164f507ef03e3d97.js",
       "static/chunks/6874-23ee546c188e73ed.js",
       "static/chunks/4775.e322910dfa9f0233.js",
       "static/chunks/1003.8575225755687aab.js",
@@ -637,28 +652,29 @@
     ]
   },
   "app/user/page.tsx -> ./components/screens/SettingsScreen": {
-    "id": 57418,
+    "id": 83120,
     "files": [
       "static/chunks/7cb1fa1f-9c1d16e5e8123936.js",
       "static/chunks/70e0d97a.24e011f628c0cea2.js",
       "static/chunks/54a60aa6.8a48f8115301533b.js",
       "static/chunks/2619-b8db57ac19da49ac.js",
-      "static/chunks/3153-a31e6e192173abd3.js",
+      "static/chunks/3153-e64ac4818944a32c.js",
+      "static/chunks/7241-894fa0b12e1855d6.js",
       "static/chunks/1514-050763042a17108a.js",
-      "static/chunks/2861.62f07e9672d96fc9.js",
-      "static/chunks/3740.8f98ac6fc55e946e.js",
+      "static/chunks/2861.74cb2a2a78963144.js",
+      "static/chunks/8742.72ee4d09165f83f3.js",
       "static/chunks/5274-2b462317eece06dd.js",
       "static/chunks/854-3634726a69bdffdf.js",
-      "static/chunks/5554-b52ffd943087ed11.js",
+      "static/chunks/5554-d589b3ca1c5c1800.js",
       "static/chunks/5746-3d5b18961ece1de8.js",
-      "static/chunks/6221.c2b4154ace346a8e.js",
+      "static/chunks/6221.018846a154fb5f0a.js",
       "static/chunks/223-a3cb89e097b9bf96.js",
-      "static/chunks/7735.a47f58a14a029139.js",
+      "static/chunks/7735.c1df3027e16aa62b.js",
       "static/chunks/23.aa19192c6562454f.js",
       "static/chunks/8921.682b3271d2972ee4.js",
       "static/chunks/656.e651250ea86d8ba5.js",
       "static/chunks/2314.666e5bb91779c383.js",
-      "static/chunks/9808.352350a0f148dbd7.js"
+      "static/chunks/9046.5ce69c9d270ad1b0.js"
     ]
   },
   "app/user/page.tsx -> @/lib/utils": {
@@ -699,15 +715,15 @@
   "components/CapacitorAuthSync.tsx -> @/services/mailApi": {
     "id": 5554,
     "files": [
-      "static/chunks/5554-b52ffd943087ed11.js"
+      "static/chunks/5554-d589b3ca1c5c1800.js"
     ]
   },
   "components/CapacitorAuthSync.tsx -> @/services/meshChatManager": {
     "id": 21816,
     "files": [
-      "static/chunks/1633-745eda0fec0c4abb.js",
+      "static/chunks/1633-4d87e47312d34d0d.js",
       "static/chunks/3122-3ebfc75848a8b69b.js",
-      "static/chunks/8022.1aa2b3400cdad2fd.js"
+      "static/chunks/8022.e748afdbe611a544.js"
     ]
   },
   "components/CapacitorAuthSync.tsx -> @/utils/safeStorage": {
@@ -717,7 +733,7 @@
   "components/CapacitorDeepLinkHandler.tsx -> @/lib/e2ee/e2eeService": {
     "id": 91633,
     "files": [
-      "static/chunks/1633-745eda0fec0c4abb.js",
+      "static/chunks/1633-4d87e47312d34d0d.js",
       "static/chunks/9137.99f49a08f1a07ead.js"
     ]
   },
@@ -746,7 +762,7 @@
   "components/call/p2g/GroupVideoCall.tsx -> @/services/presenceLifecycleManager": {
     "id": 81063,
     "files": [
-      "static/chunks/1063.f945af9d5bc04e66.js"
+      "static/chunks/1063.df25170f51ffa623.js"
     ]
   },
   "components/call/p2g/GroupVoiceCall.tsx -> @/services/chatApi": {
@@ -756,19 +772,19 @@
   "components/call/p2g/GroupVoiceCall.tsx -> @/services/presenceLifecycleManager": {
     "id": 81063,
     "files": [
-      "static/chunks/1063.f945af9d5bc04e66.js"
+      "static/chunks/1063.df25170f51ffa623.js"
     ]
   },
   "components/call/p2p/P2PVideoCall.tsx -> @/services/presenceLifecycleManager": {
     "id": 81063,
     "files": [
-      "static/chunks/1063.f945af9d5bc04e66.js"
+      "static/chunks/1063.df25170f51ffa623.js"
     ]
   },
   "components/call/p2p/P2PVoiceCall.tsx -> @/services/presenceLifecycleManager": {
     "id": 81063,
     "files": [
-      "static/chunks/1063.f945af9d5bc04e66.js"
+      "static/chunks/1063.df25170f51ffa623.js"
     ]
   },
   "components/call/ui/GlobalCallUI.tsx -> @/services/chatApi": {
@@ -868,7 +884,7 @@
   "lib/e2ee/e2eeService.ts -> @privacyresearch/libsignal-protocol-typescript": {
     "id": 70979,
     "files": [
-      "static/chunks/7bc34f51.b50a8efcd6102bec.js",
+      "static/chunks/7bc34f51.9feddf449708dc91.js",
       "static/chunks/509f3449.e902d50d5b5d0450.js",
       "static/chunks/1029.3ef9e7fa38612fae.js",
       "static/chunks/162.9f54f4fd87f80e6b.js",
@@ -878,16 +894,18 @@
   "modules/budget/manifest.ts -> ./widgets/BudgetVaultWidget": {
     "id": 11653,
     "files": [
+      "static/chunks/2619-b8db57ac19da49ac.js",
       "static/chunks/1653.7cb656d37285095b.js"
     ]
   },
   "modules/budget/manifest.ts -> @/app/user/components/modules/budget/AiBudgetScreen": {
     "id": 21296,
     "files": [
-      "static/chunks/416e6ad5-a69a9ac609e0cbda.js",
+      "static/chunks/416e6ad5-dd3c5f0f5036c32c.js",
       "static/chunks/8720-bedb01d68cae4a63.js",
+      "static/chunks/2619-b8db57ac19da49ac.js",
       "static/chunks/5274-2b462317eece06dd.js",
-      "static/chunks/1296.86236f7d27b0a2e3.js",
+      "static/chunks/1296.0f66e6a9a7e4b38a.js",
       "static/chunks/298.b9c1fca928acaf56.js"
     ]
   },
@@ -904,7 +922,7 @@
   "modules/chat/ChatList.tsx -> @/app/user/components/status/HorizontalStatusList": {
     "id": 29760,
     "files": [
-      "static/chunks/9760.ea3e6fa75d60dcf2.js"
+      "static/chunks/9760.5b10c146cf2d0e83.js"
     ]
   },
   "modules/chat/ChatList.tsx -> @/services/chatApi": {
@@ -977,13 +995,14 @@
   "modules/crm/manifest.ts -> ./widgets/CrmPipelineWidget": {
     "id": 31413,
     "files": [
+      "static/chunks/2619-b8db57ac19da49ac.js",
       "static/chunks/1413.fb6e70311081270f.js"
     ]
   },
   "modules/crm/manifest.ts -> @/app/user/components/modules/crm/CrmScreen": {
     "id": 34775,
     "files": [
-      "static/chunks/416e6ad5-a69a9ac609e0cbda.js",
+      "static/chunks/416e6ad5-dd3c5f0f5036c32c.js",
       "static/chunks/2170a4aa-b26f4c6e4289e1b3.js",
       "static/chunks/164f4fb6-23ea50d4c50b2b58.js",
       "static/chunks/280273a7-7e2fba95c2931159.js",
@@ -994,63 +1013,71 @@
       "static/chunks/8327.3ec5843e8d42b64f.js",
       "static/chunks/6953-662df6b286aad059.js",
       "static/chunks/5274-2b462317eece06dd.js",
-      "static/chunks/5554-b52ffd943087ed11.js",
+      "static/chunks/5554-d589b3ca1c5c1800.js",
       "static/chunks/1621.e7e306210b119c46.js",
       "static/chunks/1050.0ba22d0576096ff3.js",
       "static/chunks/8817.3caa8ec9115fba65.js"
     ]
   },
-  "modules/hrm/manifest.ts -> @/app/user/components/modules/hrm/HrmScreen": {
-    "id": 47240,
+  "modules/custom/manifest.ts -> ./CustomScreen": {
+    "id": 26170,
     "files": [
-      "static/chunks/416e6ad5-a69a9ac609e0cbda.js",
+      "static/chunks/3789.d659f1197ed2246a.js"
+    ]
+  },
+  "modules/hrm/manifest.ts -> @/app/user/components/modules/hrm/HrmScreen": {
+    "id": 51374,
+    "files": [
+      "static/chunks/416e6ad5-dd3c5f0f5036c32c.js",
       "static/chunks/8720-bedb01d68cae4a63.js",
-      "static/chunks/4220-847c6c744dd339a5.js",
+      "static/chunks/7241-894fa0b12e1855d6.js",
       "static/chunks/7905.d96860854b49007e.js",
       "static/chunks/4153-2e3227d5b9db6cb5.js",
+      "static/chunks/6318.2521329ed128d156.js",
       "static/chunks/5274-2b462317eece06dd.js",
-      "static/chunks/7240.1cd6606ae4f157ae.js",
+      "static/chunks/1374.bb428810b3dfcc47.js",
       "static/chunks/9953.72c2d12f9adea3a2.js"
     ]
   },
   "modules/mail/manifest.ts -> ./MailScreen": {
     "id": 62175,
     "files": [
-      "static/chunks/416e6ad5-a69a9ac609e0cbda.js",
+      "static/chunks/416e6ad5-dd3c5f0f5036c32c.js",
       "static/chunks/2170a4aa-b26f4c6e4289e1b3.js",
       "static/chunks/fcfb803e-6d015a352bb44e77.js",
       "static/chunks/164f4fb6-23ea50d4c50b2b58.js",
       "static/chunks/280273a7-7e2fba95c2931159.js",
       "static/chunks/8720-bedb01d68cae4a63.js",
+      "static/chunks/2619-b8db57ac19da49ac.js",
       "static/chunks/392-1df10cf7c7a270e4.js",
       "static/chunks/2639-16bce99d087289b4.js",
       "static/chunks/9829-cae4f96cfe6c2c2d.js",
       "static/chunks/1855-08251e2f8e49e4d0.js",
-      "static/chunks/4220-847c6c744dd339a5.js",
+      "static/chunks/7241-894fa0b12e1855d6.js",
       "static/chunks/7905.d96860854b49007e.js",
       "static/chunks/4577-f727140c240e91f8.js",
       "static/chunks/6049-a514961d48cc94a6.js",
-      "static/chunks/1603-7f4df0910cd0d097.js",
+      "static/chunks/5114-464d4f53bb055cdc.js",
       "static/chunks/5238-f0c8cc2e60697b6f.js",
-      "static/chunks/2931.379acb5f2f07dff1.js",
+      "static/chunks/2931.0a8a370bed3c87d1.js",
       "static/chunks/1029.3ef9e7fa38612fae.js",
       "static/chunks/7029-d2938e58bcd8e3c3.js",
       "static/chunks/4484.f388be2ce207c346.js",
-      "static/chunks/1633-745eda0fec0c4abb.js",
+      "static/chunks/1633-4d87e47312d34d0d.js",
       "static/chunks/6953-662df6b286aad059.js",
       "static/chunks/5274-2b462317eece06dd.js",
       "static/chunks/854-3634726a69bdffdf.js",
       "static/chunks/3122-3ebfc75848a8b69b.js",
       "static/chunks/6687-8ef6a0c65c2a9f58.js",
-      "static/chunks/5554-b52ffd943087ed11.js",
+      "static/chunks/5554-d589b3ca1c5c1800.js",
       "static/chunks/5746-3d5b18961ece1de8.js",
-      "static/chunks/4053-72a463e12436957c.js",
-      "static/chunks/6221.c2b4154ace346a8e.js",
+      "static/chunks/4053-2b4efa8aa0c4221f.js",
+      "static/chunks/6221.018846a154fb5f0a.js",
       "static/chunks/223-a3cb89e097b9bf96.js",
-      "static/chunks/7735.a47f58a14a029139.js",
+      "static/chunks/7735.c1df3027e16aa62b.js",
       "static/chunks/2201-5f802610b68c3af7.js",
-      "static/chunks/382.70b71d582ac9088b.js",
-      "static/chunks/8514.b33d2f9d870313e9.js"
+      "static/chunks/382.709b4e6a83e21ae6.js",
+      "static/chunks/8514.c246391719cab37b.js"
     ]
   },
   "notifications/firebaseTokenService.ts -> @/lib/utils": {
@@ -1093,7 +1120,7 @@
   "notifications/notificationListeners.ts -> @/lib/e2ee/e2eeService": {
     "id": 91633,
     "files": [
-      "static/chunks/1633-745eda0fec0c4abb.js"
+      "static/chunks/1633-4d87e47312d34d0d.js"
     ]
   },
   "notifications/notificationListeners.ts -> @/lib/utils": {
@@ -1123,7 +1150,7 @@
   "notifications/offlineReplyQueue.ts -> @/lib/e2ee/e2eeService": {
     "id": 91633,
     "files": [
-      "static/chunks/1633-745eda0fec0c4abb.js"
+      "static/chunks/1633-4d87e47312d34d0d.js"
     ]
   },
   "notifications/offlineReplyQueue.ts -> @/services/chatApi": {
@@ -1149,9 +1176,9 @@
     "id": 63960,
     "files": [
       "static/chunks/8720-bedb01d68cae4a63.js",
-      "static/chunks/1633-745eda0fec0c4abb.js",
+      "static/chunks/1633-4d87e47312d34d0d.js",
       "static/chunks/3122-3ebfc75848a8b69b.js",
-      "static/chunks/3960-ca18708f64001a72.js",
+      "static/chunks/3960-0d8b7759a1f0a43d.js",
       "static/chunks/6280.99f49a08f1a07ead.js"
     ]
   },
@@ -1189,7 +1216,7 @@
   "utils/installReferrer.ts -> @/lib/e2ee/e2eeService": {
     "id": 91633,
     "files": [
-      "static/chunks/1633-745eda0fec0c4abb.js",
+      "static/chunks/1633-4d87e47312d34d0d.js",
       "static/chunks/9137.99f49a08f1a07ead.js"
     ]
   }

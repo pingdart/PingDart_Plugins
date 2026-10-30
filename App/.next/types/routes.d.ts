@@ -6,7 +6,7 @@ type AppRouteHandlerRoutes = "/api/crm/ai/generate" | "/api/crm/n8n" | "/api/run
 type PageRoutes = never
 type LayoutRoutes = "/" | "/admin" | "/ai" | "/chat" | "/developer" | "/portal" | "/user"
 type RedirectRoutes = never
-type RewriteRoutes = "/index.html" | "/index.php" | "/uploads/[[...path]]"
+type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes | AppRouteHandlerRoutes
 
 
@@ -122,8 +122,6 @@ interface ParamMap {
   "/downloads": {}
   "/email-setup": {}
   "/forgot-password": {}
-  "/index.html": {}
-  "/index.php": {}
   "/join/[roomId]": { "roomId": string; }
   "/link": {}
   "/login": {}
@@ -151,7 +149,6 @@ interface ParamMap {
   "/shop": {}
   "/solutions": {}
   "/splashscreen": {}
-  "/uploads/[[...path]]": { "path"?: string[]; }
   "/user": {}
   "/user/dashboard": {}
   "/user/live": {}

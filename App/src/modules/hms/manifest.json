@@ -1,0 +1,28 @@
+{
+  "id": "hms_suite",
+  "name": "Hospital Management Suite (HMS)",
+  "category": "Business Modules",
+  "desc": "Doctors, Patients, Appointments, Prescriptions & Electronic Health Records",
+  "longDesc": "Full Enterprise HMS module built on PingDart Plugin Platform. Manage doctor schedules, patient intake queues, appointment bookings, lab reports, and automated SMS reminders.",
+  "icon": "Building01Icon",
+  "nav": "HMS",
+  "status": "Active",
+  "accentColor": "from-rose-500 to-red-600",
+  "badgeColor": "bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-900",
+  "metrics": [
+    { "label": "Active Doctors", "value": "48" },
+    { "label": "Patients Today", "value": "312" },
+    { "label": "Appointments", "value": "128" }
+  ],
+  "features": [
+    "Patient records & Electronic Health History",
+    "Doctor queue management & OPD bookings",
+    "Integrated prescription generator & lab orders",
+    "Real-time patient chat & notification alerts"
+  ],
+  "configOptions": [
+    { "label": "Auto-stage OPD queue tokens", "enabled": true },
+    { "label": "Prescription SMS sync", "enabled": true },
+    { "label": "Doctor roster notifications", "enabled": true }
+  ]
+}

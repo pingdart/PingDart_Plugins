@@ -130,7 +130,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/malleravindra/Projucts/PingDart Chat/App",
+    "outputFileTracingRoot": "/Volumes/USB/Projucts/PingDart Chat/App",
     "allowedDevOrigins": [
       "192.168.0.197",
       "localhost",
@@ -342,7 +342,7 @@
       "@privacyresearch/libsignal-protocol-typescript"
     ],
     "turbopack": {
-      "root": "/Users/malleravindra/Projucts/PingDart Chat/App",
+      "root": "/Volumes/USB/Projucts/PingDart Chat/App",
       "resolveAlias": {
         "fs": [],
         "path": [],
@@ -355,7 +355,7 @@
       "fallback": []
     }
   },
-  "appDir": "/Users/malleravindra/Projucts/PingDart Chat/App",
+  "appDir": "/Volumes/USB/Projucts/PingDart Chat/App",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",

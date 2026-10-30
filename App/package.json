@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "private": true,
   "scripts": {
     "dev": "node scripts/serve.js --dev",
@@ -23,7 +23,8 @@
     "android:mac": "export JAVA_HOME=\"/Applications/Android Studio.app/Contents/jbr/Contents/Home\" && export PATH=\"$JAVA_HOME/bin:$PATH:$HOME/Library/Android/sdk/platform-tools\" && for d in $(adb devices | awk 'NR>1 && $2==\"device\" {print $1}'); do adb -s \"$d\" reverse tcp:4026 tcp:4026 2>/dev/null; adb -s \"$d\" reverse tcp:4025 tcp:4025 2>/dev/null; adb -s \"$d\" reverse tcp:5001 tcp:5001 2>/dev/null; done && npx cap run android",
     "build:ios": "npm run prebuild && npx cross-env NODE_OPTIONS=--max-old-space-size=4096 NEXT_OUTPUT_EXPORT=true next build && npx cap sync ios && npx cap open ios",
     "build:desktop": "npm run prebuild && npx cross-env NODE_OPTIONS=--max-old-space-size=4096 NEXT_OUTPUT_EXPORT=true next build && npx cap sync @capacitor-community/electron",
-    "postinstall": "node scripts/patch-libsignal.js && node scripts/patch-native-run.js"
+    "postinstall": "node scripts/patch-libsignal.js && node scripts/patch-native-run.js",
+    "serve": "node scripts/serve.js"
   },
   "dependencies": {
     "@babel/runtime": "^8.0.0",

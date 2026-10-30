@@ -1,6 +1,6 @@
 {
-  "version": "1.0.8",
-  "releaseDate": "2026-10-30T10:10:13.450Z",
+  "version": "1.0.9",
+  "releaseDate": "2026-10-30T11:01:03.660Z",
   "protectionLevel": "Scrambled Internal Folders + AST + V8 Bytecode (.jsc)",
   "encodedFiles": 463,
   "modules": [
