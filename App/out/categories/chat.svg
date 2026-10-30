@@ -1,0 +1,27 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chat_bg" x1="20" y1="20" x2="220" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10B981"/>
+      <stop offset="0.5" stop-color="#059669"/>
+      <stop offset="1" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="glass_overlay" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="glow_chat" x="10" y="10" width="220" height="220" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#059669" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="10" y="10" width="220" height="220" rx="36" fill="url(#chat_bg)" filter="url(#glow_chat)"/>
+  <rect x="10" y="10" width="220" height="220" rx="36" fill="url(#glass_overlay)"/>
+  <path d="M10 46C10 26.1178 26.1178 10 46 10H194C213.882 10 230 26.1178 230 46V70C150 110 90 60 10 100V46Z" fill="#FFFFFF" fill-opacity="0.2"/>
+
+  {/* 3D Chat Bubble */}
+  <path d="M55 75C55 58.4315 68.4315 45 85 45H155C171.569 45 185 58.4315 185 75V125C185 141.569 171.569 155 155 155H100L65 180V155C59.4772 155 55 150.523 55 145V75Z" fill="#FFFFFF"/>
+  <circle cx="95" cy="100" r="9" fill="#059669"/>
+  <circle cx="120" cy="100" r="9" fill="#059669"/>
+  <circle cx="145" cy="100" r="9" fill="#059669"/>
+</svg>

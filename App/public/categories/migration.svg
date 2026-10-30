@@ -1,0 +1,25 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="migr_bg" x1="20" y1="20" x2="220" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBBF24"/>
+      <stop offset="0.5" stop-color="#D97706"/>
+      <stop offset="1" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="glass_overlay" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="glow_migr" x="10" y="10" width="220" height="220" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#D97706" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="10" y="10" width="220" height="220" rx="36" fill="url(#migr_bg)" filter="url(#glow_migr)"/>
+  <rect x="10" y="10" width="220" height="220" rx="36" fill="url(#glass_overlay)"/>
+  <path d="M10 46C10 26.1178 26.1178 10 46 10H194C213.882 10 230 26.1178 230 46V70C150 110 90 60 10 100V46Z" fill="#FFFFFF" fill-opacity="0.2"/>
+
+  {/* 3D 1-Click Import Lightning Flash */}
+  <circle cx="120" cy="120" r="55" fill="#FFFFFF"/>
+  <path d="M125 60L80 130H118L110 180L160 110H122L125 60Z" fill="#D97706"/>
+</svg>

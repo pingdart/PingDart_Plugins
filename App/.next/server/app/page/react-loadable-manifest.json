@@ -1,0 +1,47 @@
+{
+  "[project]/src/components/landing/FinalCanvas3D.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/landing/FinalCanvas3D.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_three_build_three_core_996ef05a.js",
+      "static/chunks/node_modules_three_build_three_module_0c59ee63.js",
+      "static/chunks/node_modules_three_build_three_module_f7d46d9b.js",
+      "static/chunks/node_modules_@react-three_fiber_dist_2ea8d075._.js",
+      "static/chunks/node_modules_95bdac52._.js",
+      "static/chunks/src_components_landing_FinalCanvas3D_tsx_b08deba8._.js",
+      "static/chunks/src_components_landing_FinalCanvas3D_tsx_a4ec4db3._.js"
+    ]
+  },
+  "[project]/src/components/landing/HeroCanvas3D.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/landing/HeroCanvas3D.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_three_build_three_core_996ef05a.js",
+      "static/chunks/node_modules_three_build_three_module_0c59ee63.js",
+      "static/chunks/node_modules_three_build_three_module_f7d46d9b.js",
+      "static/chunks/node_modules_@react-three_fiber_dist_2ea8d075._.js",
+      "static/chunks/node_modules_5548bd52._.js",
+      "static/chunks/src_components_landing_HeroCanvas3D_tsx_f494e945._.js",
+      "static/chunks/src_components_landing_HeroCanvas3D_tsx_a4ec4db3._.js"
+    ]
+  },
+  "[project]/src/components/landing/SecurityCanvas3D.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/landing/SecurityCanvas3D.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_three_build_three_core_996ef05a.js",
+      "static/chunks/node_modules_three_build_three_module_0c59ee63.js",
+      "static/chunks/node_modules_three_build_three_module_f7d46d9b.js",
+      "static/chunks/node_modules_@react-three_fiber_dist_2ea8d075._.js",
+      "static/chunks/node_modules_39243d96._.js",
+      "static/chunks/src_components_landing_SecurityCanvas3D_tsx_6f37eefd._.js",
+      "static/chunks/src_components_landing_SecurityCanvas3D_tsx_a4ec4db3._.js"
+    ]
+  },
+  "[project]/src/app/splashscreen/page.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/app/splashscreen/page.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_0674c521._.js",
+      "static/chunks/src_app_splashscreen_070c02ee._.js",
+      "static/chunks/node_modules_e31c9aae._.js",
+      "static/chunks/src_app_splashscreen_page_tsx_8871b3c6._.js"
+    ]
+  }
+}

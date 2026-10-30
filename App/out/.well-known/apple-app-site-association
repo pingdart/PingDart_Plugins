@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "YOUR_APPLE_TEAM_ID.com.pingdart.app",
+        "paths": ["*"],
+        "components": [
+          { "/": "/chat/*" },
+          { "/": "/group/*" },
+          { "/": "/profile/*" },
+          { "/": "/invite/*" },
+          { "/": "/join/*" },
+          { "/": "/refer/*" },
+          { "/": "/r/*" },
+          { "/": "/*" }
+        ]
+      }
+    ]
+  }
+}

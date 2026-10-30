@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2563EB</color>
+    <color name="colorPrimaryDark">#1D4ED8</color>
+    <color name="colorAccent">#4F46E5</color>
+    <!-- Splash / app background — dark mode brand color, eliminates white flash -->
+    <color name="splashBackground">#0B141A</color>
+</resources>

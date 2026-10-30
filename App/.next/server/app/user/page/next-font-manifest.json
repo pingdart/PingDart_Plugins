@@ -1,0 +1,12 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/src/app/user/page": [
+      "static/media/MagettasDEMOLight-s.p.0c0704a7.otf",
+      "static/media/MagettasDEMO-s.p.48de2f5e.otf",
+      "static/media/MagettasDEMO_Bold-s.p.d87ed78c.otf"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1117],{81117:(e,c,s)=>{s.d(c,{y:()=>i});var a=s(95155),k=s(18502),l=s(47779);let i=e=>(0,a.jsx)(k.n,{icon:l.yiml,...e});i.displayName="CheckmarkCircle01Icon"}}]);

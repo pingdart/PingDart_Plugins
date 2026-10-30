@@ -1,0 +1,22 @@
+{
+  "version": "1.0.8",
+  "releaseDate": "2026-10-30T10:10:13.450Z",
+  "protectionLevel": "Scrambled Internal Folders + AST + V8 Bytecode (.jsc)",
+  "encodedFiles": 463,
+  "modules": [
+    {
+      "id": "custom",
+      "name": "Custom Plugin",
+      "version": "1.0.0"
+    },
+    {
+      "id": "hms_suite",
+      "name": "Hospital Management Suite (HMS)",
+      "version": "1.0.0"
+    }
+  ],
+  "instructions": {
+    "backend": "Run `cd Apis && npm install --omit=dev && npm start`. The API runs at http://localhost:4025 natively from precompiled bytecode.",
+    "frontend": "Run `cd App && npm install && npm run dev`. The web workspace runs at http://localhost:4026."
+  }
+}

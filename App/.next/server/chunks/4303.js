@@ -1,0 +1,1 @@
+"use strict";exports.id=4303,exports.ids=[4303],exports.modules={24303:(a,b,c)=>{c.d(b,{y:()=>g});var d=c(21124),e=c(82782),f=c(18859);let g=a=>(0,d.jsx)(e.n,{icon:f.yiml,...a});g.displayName="CheckmarkCircle01Icon"}};

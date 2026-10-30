@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\n  \"app\": {\n    \"[project]/src/app/page\": [\n      \"static/media/MagettasDEMOLight-s.p.0c0704a7.otf\",\n      \"static/media/MagettasDEMO-s.p.48de2f5e.otf\",\n      \"static/media/MagettasDEMO_Bold-s.p.d87ed78c.otf\"\n    ]\n  },\n  \"appUsingSizeAdjust\": true,\n  \"pages\": {},\n  \"pagesUsingSizeAdjust\": false\n}"

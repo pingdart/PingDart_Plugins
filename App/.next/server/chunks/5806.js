@@ -1,0 +1,1 @@
+"use strict";exports.id=5806,exports.ids=[5806],exports.modules={70819:(a,b,c)=>{c.d(b,{k:()=>g});var d=c(21124),e=c(82782),f=c(18859);let g=a=>(0,d.jsx)(e.n,{icon:f.khQ8,...a});g.displayName="Mail01Icon"},99408:(a,b,c)=>{c.d(b,{B:()=>g});var d=c(21124),e=c(82782),f=c(18859);let g=a=>(0,d.jsx)(e.n,{icon:f.BZII,...a});g.displayName="SparklesIcon"}};

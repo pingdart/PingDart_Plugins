@@ -1,0 +1,29 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rooms_bg" x1="20" y1="20" x2="220" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A855F7"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="glass_overlay" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="glow_rooms" x="10" y="10" width="220" height="220" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#6366F1" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="10" y="10" width="220" height="220" rx="36" fill="url(#rooms_bg)" filter="url(#glow_rooms)"/>
+  <rect x="10" y="10" width="220" height="220" rx="36" fill="url(#glass_overlay)"/>
+  <path d="M10 46C10 26.1178 26.1178 10 46 10H194C213.882 10 230 26.1178 230 46V70C150 110 90 60 10 100V46Z" fill="#FFFFFF" fill-opacity="0.2"/>
+
+  {/* 3D Social Room Group Avatar Icons */}
+  <circle cx="120" cy="95" r="28" fill="#FFFFFF"/>
+  <path d="M72 175C72 145 93 132 120 132C147 132 168 145 168 175H72Z" fill="#FFFFFF"/>
+  <circle cx="70" cy="100" r="18" fill="#E0E7FF"/>
+  <path d="M40 165C40 144 55 135 75 135V165H40Z" fill="#E0E7FF"/>
+  <circle cx="170" cy="100" r="18" fill="#E0E7FF"/>
+  <path d="M200 165C200 144 185 135 165 135V165H200Z" fill="#E0E7FF"/>
+</svg>

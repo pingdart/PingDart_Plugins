@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "caseSensitive": false,
+  "basePath": "",
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [
+      {
+        "source": "/index.html",
+        "destination": "/",
+        "regex": "^\\/index\\.html(?:\\/)?$",
+        "check": true
+      },
+      {
+        "source": "/index.php",
+        "destination": "/",
+        "regex": "^\\/index\\.php(?:\\/)?$",
+        "check": true
+      },
+      {
+        "source": "/uploads/:path*",
+        "destination": "http://192.168.0.197:4025/api/v1/uploads/:path*",
+        "regex": "^\\/uploads(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))?(?:\\/)?$",
+        "check": true
+      }
+    ],
+    "fallback": []
+  },
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "permanent": true,
+      "internal": true,
+      "regex": "^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"
+    }
+  ],
+  "headers": [],
+  "dataRoutes": [],
+  "dynamicRoutes": [],
+  "staticRoutes": []
+}

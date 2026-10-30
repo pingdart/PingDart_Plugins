@@ -1,0 +1,21 @@
+{
+  "id": "custom",
+  "name": "Custom Plugin",
+  "category": "Developer Plugins",
+  "desc": "Custom developer plugin for extending PingDart frontend & backend",
+  "longDesc": "Custom developer plugin module integrated with PingDart Chat & Enterprise Suite. Seamlessly communicates with backend Plugins/custom APIs.",
+  "icon": "Blocks",
+  "nav": "Custom",
+  "status": "Active",
+  "accentColor": "from-indigo-500 to-purple-600",
+  "badgeColor": "bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border-indigo-200 dark:border-indigo-900",
+  "metrics": [
+    { "label": "Plugin Status", "value": "Ready" },
+    { "label": "Version", "value": "1.0.0" }
+  ],
+  "features": [
+    "Connected to /api/v1/plugins/custom backend APIs",
+    "Self-contained UI components and widgets",
+    "Isolated and scalable developer architecture"
+  ]
+}

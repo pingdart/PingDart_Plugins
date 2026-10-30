@@ -1,0 +1,43 @@
+/* [project]/src/app/magettas_4b31e5b8.module.css [app-client] (css) */
+@font-face {
+  font-family: magettas;
+  src: url("../media/MagettasDEMOLight-s.p.0c0704a7.otf") format("opentype");
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: magettas;
+  src: url("../media/MagettasDEMO-s.p.48de2f5e.otf") format("opentype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: magettas;
+  src: url("../media/MagettasDEMO_Bold-s.p.d87ed78c.otf") format("opentype");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: magettas Fallback;
+  src: local(Arial);
+  ascent-override: 90.38%;
+  descent-override: 31.18%;
+  line-gap-override: 1.07%;
+  size-adjust: 104.75%;
+}
+
+.magettas_4b31e5b8-module__lWx_nq__className {
+  font-family: magettas, magettas Fallback;
+}
+
+.magettas_4b31e5b8-module__lWx_nq__variable {
+  --font-magettas: "magettas", "magettas Fallback";
+}
+
+/*# sourceMappingURL=src_app_magettas_4b31e5b8_module_css_bad6b30c._.single.css.map*/

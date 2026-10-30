@@ -1,0 +1,63 @@
+{
+  "appId": "com.pingdart.desktop",
+  "productName": "PingDart",
+  "directories": {
+    "buildResources": "resources",
+    "output": "dist"
+  },
+  "files": [
+    "assets/**/*",
+    "build/**/*",
+    "capacitor.config.*",
+    "app/**/*"
+  ],
+  "publish": [
+    {
+      "provider": "generic",
+      "url": "https://pingdart.com/downloads/"
+    }
+  ],
+  "nsis": {
+    "allowElevation": true,
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false,
+    "differentialPackage": true
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "assets/appIcon.ico"
+  },
+  "mac": {
+    "category": "public.app-category.business",
+    "target": [
+      {
+        "target": "dmg",
+        "arch": ["x64", "arm64"]
+      },
+      {
+        "target": "zip",
+        "arch": ["x64", "arm64"]
+      }
+    ],
+    "icon": "assets/appIcon.icns",
+    "hardenedRuntime": true,
+    "gatekeeperAssess": false
+  },
+  "linux": {
+    "target": [
+      {
+        "target": "AppImage",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "assets/appIcon.png",
+    "category": "Network"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "494941369870",
+    "project_id": "pingdart-513d9",
+    "storage_bucket": "pingdart-513d9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494941369870:android:429798d463fb57c9676e5f",
+        "android_client_info": {
+          "package_name": "com.pingdart.user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcxzJtOZMIJHxXWUcttbK1Ph3ZyBloMtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494941369870:android:86b7498dbe84fc0d676e5f",
+        "android_client_info": {
+          "package_name": "minikart.in"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcxzJtOZMIJHxXWUcttbK1Ph3ZyBloMtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

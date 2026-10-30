@@ -1,0 +1,7 @@
+{
+  "watch": ["src", ".env"],
+  "ext": "js,json",
+  "ignore": ["src/**/*.test.js", "data/"],
+  "delay": 500,
+  "signal": "SIGUSR2"
+}
