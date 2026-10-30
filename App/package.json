@@ -3,7 +3,7 @@
   "version": "1.0.8",
   "private": true,
   "scripts": {
-    "dev": "node scripts/serve.js",
+    "dev": "node scripts/serve.js --dev",
     "dev:webpack": "npx cross-env NODE_OPTIONS=--max-old-space-size=2048 next dev -H 0.0.0.0 -p 4026",
     "dev:turbo": "npx cross-env NODE_OPTIONS=--max-old-space-size=2048 next dev --turbo -H 0.0.0.0 -p 4026",
     "dev:clean": "node -e \"try { require('fs').rmSync('.next', { recursive: true, force: true }); } catch (e) {}\" && npx cross-env NODE_OPTIONS=--max-old-space-size=2048 next dev --turbo -H 0.0.0.0 -p 4026",

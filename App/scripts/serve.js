@@ -1,11 +1,292 @@
-'use strict';
-let _loaded = false;
-try {
-  require('bytenode');
-  module.exports = require('./serve.jsc');
-  _loaded = true;
-} catch (_) {}
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
-if (!_loaded) {
-const _0x4b30d1=_0x262c;(function(_0x364795,_0x55a8bb){const _0x3a3b58=_0x262c,_0x5b2896=_0x364795();while(!![]){try{const _0x2f75fa=parseInt(_0x3a3b58(0x160,'0Lvc'))/0x1*(-parseInt(_0x3a3b58(0x184,'fsWo'))/0x2)+parseInt(_0x3a3b58(0x15a,'KvYi'))/0x3+parseInt(_0x3a3b58(0x143,'9H5j'))/0x4+-parseInt(_0x3a3b58(0x173,'xujU'))/0x5+parseInt(_0x3a3b58(0x174,'U&ad'))/0x6*(parseInt(_0x3a3b58(0x14a,'&Fsx'))/0x7)+parseInt(_0x3a3b58(0x13d,'$hzj'))/0x8+-parseInt(_0x3a3b58(0x158,'YDvb'))/0x9;if(_0x2f75fa===_0x55a8bb)break;else _0x5b2896['push'](_0x5b2896['shift']());}catch(_0xd74725){_0x5b2896['push'](_0x5b2896['shift']());}}}(_0x3b48,0x93dc8));const http=require(_0x4b30d1(0x19f,'&zqP')),fs=require('fs'),path=require('path'),PORT=parseInt(process.env.PORT||_0x4b30d1(0x154,'L@vP'),0xa),HOST=process.env.HOST||_0x4b30d1(0x14c,'YDvb'),OUT_DIR=path[_0x4b30d1(0x198,'sygP')](__dirname,_0x4b30d1(0x132,'&Fsx')),BACKEND_URL=process.env.NEXT_PUBLIC_API_URL||_0x4b30d1(0x135,'&Fsx'),MIME_TYPES={'.html':_0x4b30d1(0x159,'g[!j'),'.js':_0x4b30d1(0x14f,'g3PL'),'.css':_0x4b30d1(0x156,'W(6k'),'.json':_0x4b30d1(0x177,'xujU'),'.png':_0x4b30d1(0x140,'W(6k'),'.jpg':_0x4b30d1(0x179,'N*kU'),'.jpeg':_0x4b30d1(0x18d,'xujU'),'.gif':_0x4b30d1(0x149,'ilw9'),'.svg':_0x4b30d1(0x1a1,'dDar'),'.ico':_0x4b30d1(0x188,'0Lvc'),'.webp':'image/webp','.woff':_0x4b30d1(0x15f,'dDar'),'.woff2':_0x4b30d1(0x17d,'0Lvc'),'.ttf':_0x4b30d1(0x178,'JBz]'),'.mp3':_0x4b30d1(0x137,'&Fsx'),'.wav':_0x4b30d1(0x166,'rrGc'),'.txt':'text/plain;\x20charset=utf-8','.webmanifest':_0x4b30d1(0x15d,'&zqP')};function _0x262c(_0x2d5d9d,_0x4dd954){_0x2d5d9d=_0x2d5d9d-0x132;const _0x3b4825=_0x3b48();let _0x262ca3=_0x3b4825[_0x2d5d9d];if(_0x262c['clyiDo']===undefined){var _0x1eafad=function(_0x1c4c8c){const _0x1c4b8f='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x27ca58='',_0x36f8b9='';for(let _0x1bb941=0x0,_0x5748ec,_0x1e4675,_0x529782=0x0;_0x1e4675=_0x1c4c8c['charAt'](_0x529782++);~_0x1e4675&&(_0x5748ec=_0x1bb941%0x4?_0x5748ec*0x40+_0x1e4675:_0x1e4675,_0x1bb941++%0x4)?_0x27ca58+=String['fromCharCode'](0xff&_0x5748ec>>(-0x2*_0x1bb941&0x6)):0x0){_0x1e4675=_0x1c4b8f['indexOf'](_0x1e4675);}for(let _0x36e89e=0x0,_0x192a01=_0x27ca58['length'];_0x36e89e<_0x192a01;_0x36e89e++){_0x36f8b9+='%'+('00'+_0x27ca58['charCodeAt'](_0x36e89e)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x36f8b9);};const _0x174c98=function(_0x6afc44,_0x391716){let _0x32eed1=[],_0x4e26ec=0x0,_0x515b70,_0x4e1f62='';_0x6afc44=_0x1eafad(_0x6afc44);let _0x553572;for(_0x553572=0x0;_0x553572<0x100;_0x553572++){_0x32eed1[_0x553572]=_0x553572;}for(_0x553572=0x0;_0x553572<0x100;_0x553572++){_0x4e26ec=(_0x4e26ec+_0x32eed1[_0x553572]+_0x391716['charCodeAt'](_0x553572%_0x391716['length']))%0x100,_0x515b70=_0x32eed1[_0x553572],_0x32eed1[_0x553572]=_0x32eed1[_0x4e26ec],_0x32eed1[_0x4e26ec]=_0x515b70;}_0x553572=0x0,_0x4e26ec=0x0;for(let _0x4aa31e=0x0;_0x4aa31e<_0x6afc44['length'];_0x4aa31e++){_0x553572=(_0x553572+0x1)%0x100,_0x4e26ec=(_0x4e26ec+_0x32eed1[_0x553572])%0x100,_0x515b70=_0x32eed1[_0x553572],_0x32eed1[_0x553572]=_0x32eed1[_0x4e26ec],_0x32eed1[_0x4e26ec]=_0x515b70,_0x4e1f62+=String['fromCharCode'](_0x6afc44['charCodeAt'](_0x4aa31e)^_0x32eed1[(_0x32eed1[_0x553572]+_0x32eed1[_0x4e26ec])%0x100]);}return _0x4e1f62;};_0x262c['YcgXcv']=_0x174c98,_0x262c['fSdluG']={},_0x262c['clyiDo']=!![];}const _0x38573a=_0x3b4825[0x0];_0x262c['FidMdC']!==_0x38573a&&(_0x262c['fSdluG']={},_0x262c['FidMdC']=_0x38573a);const _0x3964ea=_0x262c['fSdluG'][_0x2d5d9d];return _0x3964ea===undefined?(_0x262c['LtIQED']===undefined&&(_0x262c['LtIQED']=!![]),_0x262ca3=_0x262c['YcgXcv'](_0x262ca3,_0x4dd954),_0x262c['fSdluG'][_0x2d5d9d]=_0x262ca3):_0x262ca3=_0x3964ea,_0x262ca3;}function resolveStaticFile(_0x2251ea){const _0x5de4cd=_0x4b30d1,_0x369270={'RZTXD':function(_0x1d90c2,_0x36b8cc){return _0x1d90c2>_0x36b8cc;},'eUdqU':_0x5de4cd(0x1ad,'&zqP'),'KKQPu':function(_0x18dd0b,_0x30b7b8){return _0x18dd0b+_0x30b7b8;},'fIasK':_0x5de4cd(0x183,'9H5j'),'IjFGR':function(_0x56f845,_0x33a7ac){return _0x56f845>_0x33a7ac;}};let _0xd28e29=_0x2251ea[_0x5de4cd(0x13a,'(]Du')]('?')[0x0];_0xd28e29[_0x5de4cd(0x187,'!cCn')]('/')&&_0x369270[_0x5de4cd(0x14e,'2j0C')](_0xd28e29[_0x5de4cd(0x1a2,'[TsC')],0x1)&&(_0xd28e29=_0xd28e29[_0x5de4cd(0x14b,'(QFp')](0x0,-0x1));const _0x4394ab=path[_0x5de4cd(0x145,'0Lvc')](OUT_DIR,_0xd28e29);if(fs[_0x5de4cd(0x161,'fsWo')](_0x4394ab)&&fs[_0x5de4cd(0x155,'ilw9')](_0x4394ab)[_0x5de4cd(0x15c,'&$Vl')]())return _0x4394ab;if(fs[_0x5de4cd(0x180,'xujU')](_0x4394ab)&&fs['statSync'](_0x4394ab)[_0x5de4cd(0x18f,'Ijys')]()){const _0x141854=path['join'](_0x4394ab,_0x369270[_0x5de4cd(0x144,'YDvb')]);if(fs['existsSync'](_0x141854))return _0x141854;}if(fs[_0x5de4cd(0x17b,'&zqP')](_0x369270[_0x5de4cd(0x186,'Ji!M')](_0x4394ab,_0x369270[_0x5de4cd(0x19e,'(QFp')])))return _0x369270[_0x5de4cd(0x194,'&$Vl')](_0x4394ab,_0x5de4cd(0x18b,'6#xW'));const _0x2fef62=_0xd28e29[_0x5de4cd(0x182,'eRj6')]('/')[_0x5de4cd(0x192,'[TsC')](Boolean);if(_0x369270[_0x5de4cd(0x151,'JEty')](_0x2fef62[_0x5de4cd(0x195,'g[!j')],0x0)){const _0x46ee65=path[_0x5de4cd(0x167,'JBz]')](OUT_DIR,_0x2fef62[0x0]);if(fs[_0x5de4cd(0x1a9,'l8G7')](_0x46ee65)&&fs[_0x5de4cd(0x165,'fsWo')](_0x46ee65)['isDirectory']()){const _0x35d610=path[_0x5de4cd(0x1a6,'2j0C')](_0x46ee65,_0x369270[_0x5de4cd(0x147,'rrGc')]);if(fs[_0x5de4cd(0x152,'w$)F')](_0x35d610))return _0x35d610;}}const _0x525aa4=path[_0x5de4cd(0x17a,'t!de')](OUT_DIR,_0x369270[_0x5de4cd(0x175,'Ji!M')]);if(fs[_0x5de4cd(0x164,'KvYi')](_0x525aa4))return _0x525aa4;return null;}function _0x3b48(){const _0x433835=['WP40WOLwia','cIFdISkauW','gs1nW69pW4TFECo2WQOnCW','WO/dHSo7W655','WQuuAJLh','orxdL0JcHfuVW5O','DmoUq2v5W4VdPNFdJwbLaq','orxdLW','WPWbDZq+W48/AxrAbdKG','WONcNadcSNG','s8kOocbMWQ12lCkDWR3cR8oOf29QCK3cRdRdK2CwWPWt','o313aLyoqmkcW6iK','WR/cTZi','q8kRdcv9WQT0lCkBWQdcUa','W4CsW6WquSo+W5ffWQdcMLJdNmkH','W51Ap2C','aJ/dL8krkxe','W5BcJ8kxWO/cTttdPh04','W7VcS8oVnSol','WRuBaCkvWO40','o8obDmkCiCoTW7hdSsa','EJVdGSkbW5JcSCkz','ySkCzMFcHCoXiW','WP0TWPvA','WPZINOxdPrXvW7FdHmoWx8kpW4tcMSoLidqrhq','WQSGr8oAASk0WQRdUH4','odFdOSkqW67cHSkOWR/cIHO','W6TMbKbn','WPFdNSoRmCk4','Cmk6WRtcKG','w8kmfZdcK8kFWP5dy8ow','W7LqbXddUYKYbCo9eSk8WQum','cdpdLCkcogS','WP3dU8ooj8ky','W6ldGIxcMmo5WRbxW7DIWOxdHCoFC8oYq8oQW7rJW5ZdUsdcR2Dghmk7aSk2neDMmWtdPCooW4u','WQtcT0BdRmkA','nCk+lCk3','zCosA8kdCCoYWQ3dQa','WQtcQJW/WPVdRmkqWOhcNG','pNTbrSkofSkhrXNcTq','W6jyfWldU3u1','p8kQW4hcI8oc','WPnnWRe','CCkGWQtcH8olm0FcKfVdSa','bSowws3cKSky','W5LZW5WlmK5+cCoEcG','iSoQWQVdPdS','qmkmaJldNCodW6yBjCkjrmorpCoiW43dNSoVW77dOCo6W5C','WPSdDZmYW447zeTsaXuN','sCkneIVcImodWQrACSoz','WO7cKuJdM8kH','W7XYdSkdl8kYWQRdRW1LWP7cPbtdQJpcR2/cOCord8kNjSoKbCkWtq','gmoZiSkWcq','WPTgWQfodSkJ','pZJcIhHedui','lmo3WQ8mFSkDW5FcPSkog8o9jCoB','n2HIc1jmtW','WP3dNmoXW45fDtyJW6qWWOldUq','W6JcImoJW53dJmk0W43cSmor','e8oOFx42W7yJmSkmWRtcHmkEpa','BJaAbColv8knuY/cVduV','exZcJmoDdSk+CCkUfbHOcq','WRXUx3SB','D8oSs2W','WQG9ySobEmkzWR3dMbT5WOK','WQFcT2hdHmkm','nSk3W5q','W5xdU8kKkvxcUCohW6az','hSoptWJcRCkoWQDIBG','WOldU8oJiCkw','W6KvcYr+WOJdUW','WO0TlCk0WQa','dCklemkbtW','nI3cMxbihfbuWQHCpGVdVGWrWQXirmkYr8obhg5DWQGLW4TMW51rAmkPWQRcV8kTo8km','m8oRvM9W','WPu4AmoPxq','W4WhWOlcONZcSCoccKil','WRhcLMtdGCkkWOvwW7C','wbz3WPe','W4/dOSkKoMpdR8ooW6O','W7xcGmo6W47cHSo4W47cRCknx3WpW5P5yh4nCfCEW6aqzG','WQNcICkej0VdQ8kU','W6WlctT7WPldUSk3W5jMphhdVG','WQ0Bf8kgW5u0W4/cJ8kVWOVdNCkhyImAW68DWQZcOmkKW65RtSkS','W7HMW74nW44EsYldImkdpCozdG','emkesmk/','W5NcI8o4d8osW7y','ECk+WRdcJSoAFK7cKf/dSZ0LW7FcP8kNW4varGZcJb/cIHbuhq','W5mBgYRIL7ZcHSkBWPJdJ1KsxSopbw4eWO5ZW6j7msGaxsPQimkgW7FcGfBcS3VcSftdKW','W7zscapcSxeUfCo8','lmo7y2DFWQddRa','tMmxWQqcWOXKBmorWOy','e8o8WORdUvX7WPixq8kR','WPOD4P21v8onyZmfW7nxWQpdQbdcOmkgASocWPDBtSkKpde3WQZdQuZcJv/cQfDoWRehkmkNaulcUHiIWOtdJKtdPaLJW7dcJG','WQWVWQ5iWOLulc7dH8ki','wg8FWQmLWOzzDG','WQpcL2hdNmk2W5npW7v1','dCo2WPVdOW','W57dOSo6lSkCbCkcWOJcLq','zcCVl3Ldrmk6W74','WO7cOmo2DGNcOSoiW6u2WQ/dOmoa','jJFdN8ofc2ldVhtdIKVdUG','W41bignZWP9yr1LUoI8wzCkSWP4','W7XufqpdU2G','lCkQW5RcKmovWQL8WRpcQG','WP4QwqvBW7u5W6xdGmk7WQFcK8o4W4FcPCogjSkPW6xcTSk4W5hdVCkLwCkoW4ZdRv3cIxldJ1BdSXK','W63cICogW5/dGG','WRqdwSo7sG','scddMq','yciKuWOuh8k5W4StWP1dpa','W4iuW6Wsb8kZWQXxWPpcKa','WOSkxXHN','u8oSvIjAWOVdQZtdGa','m2bMcvPcs8kgW64SWP4oeSoBibCfWOjnW5fCW7HXWRtcQaXFev8GWO4','aCo2WPZdUvX/WOOq','iI7dOSkdW77dMSkbWQdcIXG','W4VcKSkxWPu','FCk2WQNcKCohBNZcNvJdVW','rmkzmbBcGG','E8oSthyZWPpdStZdGJe','khnexmko','W63cISoL','n2H/fKDsECklW6KG','BCoQuMC'];_0x3b48=function(){return _0x433835;};return _0x3b48();}const server=http[_0x4b30d1(0x13f,'tKOT')]((_0x4b3a26,_0x2a4367)=>{const _0x7d0006=_0x4b30d1,_0x207981={'llDek':_0x7d0006(0x162,'JBz]'),'slsCs':_0x7d0006(0x16b,'[TsC'),'hQtUE':function(_0x1a343b,_0x210ae9){return _0x1a343b+_0x210ae9;},'laFTe':function(_0x51b8f0,_0x150585){return _0x51b8f0(_0x150585);},'fUCYC':_0x7d0006(0x176,'0Lvc'),'TSBFZ':_0x7d0006(0x18c,'Ijys'),'LsMnx':function(_0x156245,_0x1fe1fb){return _0x156245===_0x1fe1fb;},'EUCBJ':_0x7d0006(0x1a7,'M$rg'),'qhoAH':_0x7d0006(0x16f,'Ji!M')},_0x1b2156=_0x4b3a26['url']||'/';if(_0x1b2156[_0x7d0006(0x1a0,'&Fsx')](_0x7d0006(0x168,'(QFp')))try{const _0x2fbaad=http[_0x7d0006(0x1aa,'dDar')](_0x207981[_0x7d0006(0x171,'JEty')](BACKEND_URL,_0x1b2156),{'method':_0x4b3a26[_0x7d0006(0x13b,'U&ad')],'headers':_0x4b3a26[_0x7d0006(0x157,'MCWy')]},_0xe5f7e6=>{const _0x31ee38=_0x7d0006;_0x2a4367[_0x31ee38(0x19b,'JEty')](_0xe5f7e6[_0x31ee38(0x19c,'N*kU')]||0xc8,_0xe5f7e6[_0x31ee38(0x13c,'g3PL')]),_0xe5f7e6[_0x31ee38(0x199,'eRj6')](_0x2a4367);});_0x2fbaad['on'](_0x7d0006(0x1ab,'^mU3'),()=>{const _0x44c73e=_0x7d0006;_0x2a4367[_0x44c73e(0x1a8,'9hcE')](0x1f6,{'Content-Type':_0x207981[_0x44c73e(0x170,'W(6k')]}),_0x2a4367[_0x44c73e(0x189,'!cCn')](_0x207981['slsCs']);}),_0x4b3a26[_0x7d0006(0x15b,'^3r^')](_0x2fbaad);return;}catch(_0x16839a){}const _0xb99578=_0x207981[_0x7d0006(0x17c,'&Fsx')](resolveStaticFile,_0x1b2156);if(!_0xb99578){_0x2a4367[_0x7d0006(0x193,'t!de')](0x194,{'Content-Type':_0x207981[_0x7d0006(0x1a3,'(QFp')]}),_0x2a4367[_0x7d0006(0x1ac,'U&ad')](_0x207981[_0x7d0006(0x1a5,'rrGc')]);return;}const _0x30c79e=path[_0x7d0006(0x13e,'xujU')](_0xb99578)[_0x7d0006(0x146,'JEty')](),_0x1cb9d9=MIME_TYPES[_0x30c79e]||_0x207981[_0x7d0006(0x14d,'g[!j')],_0x57cf08=fs[_0x7d0006(0x153,'rrGc')](_0xb99578),_0x47aff0={'Content-Type':_0x1cb9d9,'Content-Length':_0x57cf08[_0x7d0006(0x191,'^nzD')],'Cache-Control':_0x207981[_0x7d0006(0x138,'rrGc')](_0x30c79e,_0x7d0006(0x150,'0Lvc'))?_0x207981[_0x7d0006(0x19d,'^nzD')]:_0x207981[_0x7d0006(0x185,'tKOT')]};_0x2a4367[_0x7d0006(0x16e,'^mU3')](0xc8,_0x47aff0),fs[_0x7d0006(0x16c,'^nzD')](_0xb99578)[_0x7d0006(0x181,'0Lvc')](_0x2a4367);});server[_0x4b30d1(0x16d,'dDar')](PORT,HOST,()=>{const _0x417062=_0x4b30d1,_0x443123={'EsYiH':_0x417062(0x196,'M$rg')},_0x3f5f4b=_0x443123[_0x417062(0x134,'JBz]')][_0x417062(0x17e,'l8G7')]('|');let _0x349b87=0x0;while(!![]){switch(_0x3f5f4b[_0x349b87++]){case'0':console[_0x417062(0x17f,'W(6k')](_0x417062(0x15e,'YDvb'));continue;case'1':console[_0x417062(0x148,'^mU3')](_0x417062(0x139,'JEty')+HOST+':'+PORT);continue;case'2':console[_0x417062(0x18e,'9hcE')](_0x417062(0x1a4,'rrGc')+PORT);continue;case'3':console['log'](_0x417062(0x19a,'ilw9')+PORT+'\x0a');continue;case'4':console[_0x417062(0x172,'9H5j')](_0x417062(0x163,'dDar'));continue;}break;}});
+const PORT = parseInt(process.env.PORT || '4026', 10);
+const HOST = process.env.HOST || '0.0.0.0';
+const OUT_DIR = path.resolve(__dirname, '../out');
+const SRC_DIR = path.resolve(__dirname, '../src');
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:4025';
+const IS_DEV = process.argv.includes('--dev') || process.env.NODE_ENV === 'development';
+
+const MIME_TYPES = {
+  '.html': 'text/html; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.mjs': 'application/javascript; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon',
+  '.webp': 'image/webp',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2',
+  '.ttf': 'font/ttf',
+  '.mp3': 'audio/mpeg',
+  '.wav': 'audio/wav',
+  '.txt': 'text/plain; charset=utf-8',
+  '.webmanifest': 'application/manifest+json'
+};
+
+// ── SSE Live-Reload Clients (Dev Mode) ──────────────────────────────────────
+const devClients = new Set();
+
+function broadcastReload() {
+  if (!IS_DEV || devClients.size === 0) return;
+  for (const res of devClients) {
+    try {
+      res.write('data: reload\n\n');
+    } catch (_) {
+      devClients.delete(res);
+    }
+  }
 }
+
+// ── Transpile & Watch Custom Developer Modules (Dev Mode) ────────────────────
+let customModuleBundle = '';
+
+function compileCustomModules() {
+  const customDir = path.join(SRC_DIR, 'modules/custom');
+  if (!fs.existsSync(customDir)) return;
+
+  try {
+    let ts;
+    try {
+      ts = require('typescript');
+    } catch (_) {}
+
+    const files = fs.readdirSync(customDir);
+    let bundled = '/* PingDart Developer Custom Module Dev Bundle */\n';
+    bundled += 'window.__PD_CUSTOM_MODULES__ = window.__PD_CUSTOM_MODULES__ || {};\n';
+
+    files.forEach((f) => {
+      const fPath = path.join(customDir, f);
+      if (fs.statSync(fPath).isFile() && (f.endsWith('.tsx') || f.endsWith('.ts') || f.endsWith('.js'))) {
+        const raw = fs.readFileSync(fPath, 'utf8');
+        let code = raw;
+        if (ts && (f.endsWith('.tsx') || f.endsWith('.ts'))) {
+          code = ts.transpileModule(raw, {
+            compilerOptions: {
+              jsx: ts.JsxEmit.React,
+              module: ts.ModuleKind.None,
+              target: ts.ScriptTarget.ES2020,
+              removeComments: false
+            }
+          }).outputText;
+        }
+        bundled += `\n/* File: ${f} */\n(function(){\n${code}\n})();\n`;
+      }
+    });
+
+    customModuleBundle = bundled;
+    const outDevDir = path.join(OUT_DIR, '_custom_dev');
+    if (!fs.existsSync(outDevDir)) fs.mkdirSync(outDevDir, { recursive: true });
+    fs.writeFileSync(path.join(outDevDir, 'custom_module.js'), bundled, 'utf8');
+    console.log(`  [Dev Mode] Recompiled custom screens from src/modules/custom (${files.length} files)`);
+  } catch (err) {
+    console.warn(`  [Dev Mode] Module compilation warning: ${err.message}`);
+  }
+}
+
+if (IS_DEV) {
+  compileCustomModules();
+
+  const customDir = path.join(SRC_DIR, 'modules/custom');
+  if (fs.existsSync(customDir)) {
+    try {
+      let debounceTimer = null;
+      fs.watch(customDir, { recursive: true }, (event, filename) => {
+        if (!filename) return;
+        if (debounceTimer) clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          console.log(`  [Dev Mode] Detected change in custom screen: ${filename}`);
+          compileCustomModules();
+          broadcastReload();
+        }, 150);
+      });
+      console.log(`  👀 Watching src/modules/custom for live developer screen changes...`);
+    } catch (err) {
+      console.warn(`  ⚠️ Could not watch src/modules/custom: ${err.message}`);
+    }
+  }
+}
+
+// ── HTML Injector for Dev Live-Reload & Custom Screens ──────────────────────
+const DEV_RELOAD_SNIPPET = `
+<!-- PingDart Developer Dev Mode Script -->
+<script id="__pd_dev_reload__">
+(function() {
+  try {
+    const es = new EventSource('/__pd_dev_reload');
+    es.onmessage = function(e) {
+      if (e.data === 'reload') {
+        console.log('[PingDart Dev] Screen change detected! Reloading browser...');
+        window.location.reload();
+      }
+    };
+    console.log('%c[PingDart Dev Mode]%c Live screen reload active on port ${PORT}', 'color: #6366f1; font-weight: bold;', 'color: auto;');
+  } catch (_) {}
+})();
+</script>
+<script src="/_custom_dev/custom_module.js" onerror="this.remove()"></script>
+`;
+
+function injectDevScript(html) {
+  if (!IS_DEV) return html;
+  if (html.includes('</body>')) {
+    return html.replace('</body>', `${DEV_RELOAD_SNIPPET}</body>`);
+  }
+  return html + DEV_RELOAD_SNIPPET;
+}
+
+// ── URL Static File Resolver ────────────────────────────────────────────────
+function resolveStaticFile(urlPath) {
+  let cleanPath = urlPath.split('?')[0];
+  if (cleanPath.endsWith('/') && cleanPath.length > 1) {
+    cleanPath = cleanPath.slice(0, -1);
+  }
+
+  // Handle custom dev bundle
+  if (cleanPath === '/_custom_dev/custom_module.js') {
+    const devBundlePath = path.join(OUT_DIR, '_custom_dev/custom_module.js');
+    if (fs.existsSync(devBundlePath)) return devBundlePath;
+  }
+
+  const direct = path.join(OUT_DIR, cleanPath);
+
+  // 1. Direct file
+  if (fs.existsSync(direct) && fs.statSync(direct).isFile()) {
+    return direct;
+  }
+
+  // 2. Directory with index.html
+  if (fs.existsSync(direct) && fs.statSync(direct).isDirectory()) {
+    const idx = path.join(direct, 'index.html');
+    if (fs.existsSync(idx)) return idx;
+  }
+
+  // 3. cleanPath + .html (e.g. /user -> /user.html, /portal -> /portal.html)
+  if (fs.existsSync(direct + '.html')) {
+    return direct + '.html';
+  }
+
+  // 4. Portal Apps dynamic route fallback (e.g. /portal/apps/custom)
+  if (cleanPath.startsWith('/portal/apps/')) {
+    const portalAppsDefault = path.join(OUT_DIR, 'portal/apps/default.html');
+    if (fs.existsSync(portalAppsDefault)) return portalAppsDefault;
+    const portalDefault = path.join(OUT_DIR, 'portal.html');
+    if (fs.existsSync(portalDefault)) return portalDefault;
+  }
+
+  // 5. Nested dynamic folder fallback
+  const parts = cleanPath.split('/').filter(Boolean);
+  if (parts.length > 0) {
+    const parentDir = path.join(OUT_DIR, parts[0]);
+    if (fs.existsSync(parentDir) && fs.statSync(parentDir).isDirectory()) {
+      const parentIdx = path.join(parentDir, 'index.html');
+      if (fs.existsSync(parentIdx)) return parentIdx;
+    }
+    const parentHtml = path.join(OUT_DIR, parts[0] + '.html');
+    if (fs.existsSync(parentHtml)) return parentHtml;
+  }
+
+  // 6. Root fallback
+  const rootIndex = path.join(OUT_DIR, 'index.html');
+  if (fs.existsSync(rootIndex)) return rootIndex;
+
+  return null;
+}
+
+// ── HTTP Request Handler ────────────────────────────────────────────────────
+const server = http.createServer((req, res) => {
+  const reqUrl = req.url || '/';
+
+  // SSE Live Reload stream (Dev Mode)
+  if (IS_DEV && reqUrl === '/__pd_dev_reload') {
+    res.writeHead(200, {
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache',
+      'Connection': 'keep-alive',
+      'Access-Control-Allow-Origin': '*'
+    });
+    res.write('data: connected\n\n');
+    devClients.add(res);
+    req.on('close', () => devClients.delete(res));
+    return;
+  }
+
+  // Proxy /api/ and /uploads/ to backend API server
+  if (reqUrl.startsWith('/api/') || reqUrl.startsWith('/uploads/')) {
+    try {
+      const backendReq = http.request(BACKEND_URL + reqUrl, {
+        method: req.method,
+        headers: {
+          ...req.headers,
+          host: new URL(BACKEND_URL).host
+        }
+      }, (backendRes) => {
+        res.writeHead(backendRes.statusCode || 200, backendRes.headers);
+        backendRes.pipe(res);
+      });
+      backendReq.on('error', () => {
+        res.writeHead(502, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: `Backend API unreachable at ${BACKEND_URL}` }));
+      });
+      req.pipe(backendReq);
+      return;
+    } catch (_) {}
+  }
+
+  const resolved = resolveStaticFile(reqUrl);
+  if (!resolved) {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not Found');
+    return;
+  }
+
+  const ext = path.extname(resolved).toLowerCase();
+  const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+
+  if (ext === '.html') {
+    try {
+      let html = fs.readFileSync(resolved, 'utf8');
+      if (IS_DEV) {
+        html = injectDevScript(html);
+      }
+      const buf = Buffer.from(html, 'utf8');
+      res.writeHead(200, {
+        'Content-Type': contentType,
+        'Content-Length': buf.length,
+        'Cache-Control': 'no-cache'
+      });
+      res.end(buf);
+      return;
+    } catch (_) {}
+  }
+
+  const stat = fs.statSync(resolved);
+  const headers = {
+    'Content-Type': contentType,
+    'Content-Length': stat.size,
+    'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=31536000, immutable'
+  };
+
+  res.writeHead(200, headers);
+  fs.createReadStream(resolved).pipe(res);
+});
+
+server.listen(PORT, HOST, () => {
+  const modeText = IS_DEV ? '⚡ DEV MODE (Live Screen Reload Active)' : '🚀 LIVE BUILD MODE';
+  console.log(`\n   ▲ PingDart Web Server [${modeText}]`);
+  console.log(`   - Local:        http://localhost:${PORT}`);
+  console.log(`   - Network:      http://${HOST}:${PORT}`);
+  console.log(`   - Backend API:  ${BACKEND_URL}`);
+  if (IS_DEV) {
+    console.log(`   - Auto-watch:   src/modules/custom (edit screens to hot-reload)`);
+  }
+  console.log(`\n ✓ Serving frontend bundle from out/`);
+  console.log(` ✓ Ready on port ${PORT}\n`);
+});
