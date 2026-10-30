@@ -1,0 +1,715 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: 'Magettas', var(--font-magettas), 'Inter', var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ── Smart tag stagger animation ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.22s ease-out both;
+}
+
+:root {
+  color-scheme: dark light;
+  --bg: #0b141a;
+  --text: #e9edef;
+  /* Font family fallbacks — these ensure var(--font-magettas) and var(--font-inter)
+     always resolve even if Next.js localFont / Google Font injection doesn't fire.
+     @font-face rules for 'Magettas' are defined below; 'Inter' is loaded via <link> in layout.tsx. */
+  --font-magettas: 'Magettas';
+  --font-inter: 'Inter';
+  --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  --app-font-family: 'Magettas', var(--font-magettas), 'Inter', var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.dark) {
+    color-scheme: light;
+    --bg: #ffffff;
+    --text: #111827;
+  }
+}
+
+.light {
+  color-scheme: light;
+  --bg: #ffffff;
+  --text: #111827;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #0b141a;
+  --text: #e9edef;
+}
+
+/* Ensure native mobile app WebViews match the active theme cleanly without flashing */
+html.is-native.dark,
+html.is-native.dark body,
+html[data-is-native="true"].dark,
+html[data-is-native="true"].dark body {
+  background-color: #0b141a !important;
+}
+
+html.is-native.light,
+html.is-native.light body,
+html[data-is-native="true"].light,
+html[data-is-native="true"].light body {
+  background-color: #ffffff !important;
+}
+
+/* ── Dynamic Font Style Rules ── */
+html[data-font-style="default"], body[data-font-style="default"], .font-style-default {
+  --app-font-family: 'Magettas', var(--font-magettas), 'Inter', var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+html[data-font-style="inter"], body[data-font-style="inter"], .font-style-inter {
+  --app-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+html[data-font-style="roboto"], body[data-font-style="roboto"], .font-style-roboto {
+  --app-font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+html[data-font-style="outfit"], body[data-font-style="outfit"], .font-style-outfit {
+  --app-font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+html[data-font-style="serif"], body[data-font-style="serif"], .font-style-serif {
+  --app-font-family: 'Merriweather', Georgia, Cambria, 'Times New Roman', serif;
+}
+html[data-font-style="mono"], body[data-font-style="mono"], .font-style-mono {
+  --app-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+html[data-font-style="dyslexic"], body[data-font-style="dyslexic"], .font-style-dyslexic {
+  --app-font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+}
+
+html,
+body {
+  max-width: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--app-font-family, 'Magettas', var(--font-magettas), 'Inter', var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  letter-spacing: -0.01em;
+}
+
+button,
+input,
+textarea,
+select,
+[class*="font-sans"],
+[class*="font-serif"],
+[class*="font-mono"] {
+  font-family: inherit;
+}
+
+/* ── Eliminate Android WebView default yellow / orange focus outline on lock/resume ── */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+button,
+[role="button"],
+a {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
+button:focus,
+button:focus-visible,
+button:active,
+[role="button"]:focus,
+[role="button"]:focus-visible,
+[role="button"]:active {
+  outline: none !important;
+  outline-color: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.font-serif {
+  font-family: 'Magettas', var(--font-magettas), serif;
+}
+
+/* Suppress Next.js development error overlay popups inside native Android/iOS WebView */
+nextjs-portal,
+[data-nextjs-dialog-overlay],
+[data-nextjs-dialog-backdrop],
+[data-nextjs-toast],
+[data-nextjs-dialog] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/*
+ * Native onboarding splash cover
+ * ─────────────────────────────────────────────────────────────────────────────
+ * The inline blocking <script> in layout.tsx sets data-pending-onboarding on
+ * <html> synchronously before any React/CSS renders (when: native app AND user
+ * hasn't completed onboarding yet). This ::before pseudo-element is painted
+ * immediately, covering the landing page with the same dark background as the
+ * OnboardingIntro overlay so there is zero flash of page content.
+ *
+ * The attribute is removed by OnboardingIntro itself once it has mounted and
+ * determined whether to show or hide. At that point React's OnboardingIntro
+ * overlay (z-[10000]) takes over and this cover is no longer needed.
+ */
+html[data-pending-onboarding]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  /* above LandingNav and all page content */
+  background-color: #0b141a;
+  pointer-events: none;
+}
+
+/*
+ * Native Mobile App: Marketing Landing Page Suppression
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Native Android and iOS apps should never display web marketing elements
+ * (LandingNav, HeroSection, PublicFooter, etc.).
+ */
+html.is-native .landing-web-only,
+html[data-is-native="true"] .landing-web-only,
+html.is-native .landing-nav-root,
+html[data-is-native="true"] .landing-nav-root,
+html.is-native .public-footer-root,
+html[data-is-native="true"] .public-footer-root {
+  display: none !important;
+}
+
+.app {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+@font-face {
+  font-family: 'Magettas';
+  src: url('/fonts/MagettasDEMO.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Magettas';
+  src: url('/fonts/MagettasDEMO.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Magettas';
+  src: url('/fonts/MagettasDEMO-Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Magettas';
+  src: url('/fonts/MagettasDEMO-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Magettas';
+  src: url('/fonts/MagettasDEMOLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* font variables use direct font names (via @font-face) as primary,
+     with Next.js-injected CSS vars as enhancements when available. */
+  --font-sans: 'Magettas', 'Inter', var(--font-magettas), var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-heading: 'Magettas', var(--font-magettas), 'Inter', var(--font-inter), ui-sans-serif, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.18 0.02 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 265);
+  --primary: oklch(0.52 0.22 270);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.94 0.04 270);
+  --secondary-foreground: oklch(0.38 0.15 270);
+  --muted: oklch(0.95 0.01 265);
+  --muted-foreground: oklch(0.55 0.04 265);
+  --accent: oklch(0.94 0.04 270);
+  --accent-foreground: oklch(0.38 0.15 270);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.90 0.02 265);
+  --input: oklch(0.90 0.02 265);
+  --ring: oklch(0.52 0.22 270);
+  --chart-1: oklch(0.52 0.22 270);
+  --chart-2: oklch(0.67 0.18 310);
+  --chart-3: oklch(0.72 0.16 200);
+  --chart-4: oklch(0.65 0.19 140);
+  --chart-5: oklch(0.70 0.18 50);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.97 0.01 270);
+  --sidebar-foreground: oklch(0.18 0.02 265);
+  --sidebar-primary: oklch(0.52 0.22 270);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.94 0.04 270);
+  --sidebar-accent-foreground: oklch(0.38 0.15 270);
+  --sidebar-border: oklch(0.90 0.02 265);
+  --sidebar-ring: oklch(0.52 0.22 270);
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #0b141a;
+  --text: #e9edef;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(220px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+
+  .scrollbar-hide,
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar,
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+  }
+
+  /* Custom Scrollbar for Chat & Settings Areas */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.28);
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+
+  .dark .custom-scrollbar {
+    scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+  }
+
+  /* Mobile Scrollbar & Smooth Touch Scrolling (Issue 15) */
+  @media (max-width: 768px) {
+    * {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.22);
+      border-radius: 9999px;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.26);
+      border-radius: 9999px;
+    }
+
+    .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.26);
+    }
+
+    .custom-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 0, 0, 0.26) transparent;
+    }
+
+    .dark .custom-scrollbar {
+      scrollbar-color: rgba(255, 255, 255, 0.26) transparent;
+    }
+  }
+
+  /* Email HTML Content Overrides */
+  .email-html-content .gmail_attr,
+  .email-html-content .gmail_quote,
+  .email-html-content blockquote {
+    color: inherit !important;
+  }
+
+  .email-html-content blockquote {
+    border-left: 3px solid #4338ca !important;
+    padding-left: 12px !important;
+    margin-left: 0 !important;
+  }
+
+  /* Global Mobile Layout Utilities */
+  .mobile-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    flex-shrink: 0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  /* Safe Area Top & Bottom Insets — Native App Only */
+  html.is-native .mobile-header,
+  .is-native .mobile-header,
+  html.is-native header,
+  .is-native header,
+  html.is-native .card-header,
+  .is-native .card-header,
+  html.is-native [class*="min-h-[56px]"],
+  .is-native [class*="min-h-[56px]"],
+  html.is-native [class*="min-h-[54px]"],
+  .is-native [class*="min-h-[54px]"],
+  html.is-native [class*="pt-[calc(0.6rem"],
+  .is-native [class*="pt-[calc(0.6rem"],
+  html.is-native [class*="pt-[calc(0.5rem"],
+  .is-native [class*="pt-[calc(0.5rem"],
+  html.is-native [class*="pt-[calc(0.75rem"],
+  .is-native [class*="pt-[calc(0.75rem"] {
+    padding-top: calc(10px + env(safe-area-inset-top, 0px)) !important;
+    min-height: 10px !important;
+  }
+
+  html.is-native .mobile-header,
+  .is-native .mobile-header {
+    background: linear-gradient(to right, #2563eb, #4f46e5, #1d4ed8) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2) !important;
+  }
+
+  /* HRM Module Header: Safe area top clearance and bottom border-radius */
+  html.is-native .hrm-header,
+  .is-native .hrm-header,
+  .hrm-header {
+    /* padding-top: calc(max(0px, 0.75rem) + env(safe-area-inset-top, 0px)) !important; */
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+  }
+
+  @media (min-width: 768px) {
+
+    html.is-native .hrm-header,
+    .is-native .hrm-header,
+    .hrm-header {
+      padding-top: 0.75rem !important;
+      border-bottom-left-radius: 0px !important;
+      border-bottom-right-radius: 0px !important;
+    }
+  }
+
+  .mobile-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+
+  html.is-native .mobile-bottom-bar,
+  .is-native .mobile-bottom-bar {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  body.face-scanner-active .mobile-bottom-bar,
+  html.face-scanner-active .mobile-bottom-bar,
+  .face-scanner-active .mobile-bottom-bar,
+  body.hide-bottom-bar .mobile-bottom-bar,
+  html.hide-bottom-bar .mobile-bottom-bar,
+  .hide-bottom-bar .mobile-bottom-bar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(120%) !important;
+  }
+
+  /* Toast Notification Safe-Area & Responsive Alignment */
+  [data-sonner-toaster] {
+    --offset: calc(1rem + env(safe-area-inset-top, 0px)) !important;
+  }
+
+  [data-sonner-toaster][data-y-position="top"] {
+    top: calc(1rem + env(safe-area-inset-top, 0px)) !important;
+  }
+
+  /* Mobile screen & Native app: Always center horizontally, never overflow left */
+  @media (max-width: 767px) {
+    [data-sonner-toaster] {
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) !important;
+      width: calc(100vw - 32px) !important;
+      max-width: 390px !important;
+      margin: 0 auto !important;
+      top: calc(1rem + env(safe-area-inset-top, 0px)) !important;
+      --offset: calc(1rem + env(safe-area-inset-top, 0px)) !important;
+    }
+
+    [data-sonner-toaster] [data-sonner-toast] {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+    }
+  }
+
+  /* Native App (Android / iOS) on any viewport size */
+  html.is-native [data-sonner-toaster],
+  .is-native [data-sonner-toaster] {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+    top: calc(1.25rem + env(safe-area-inset-top, 0px)) !important;
+    --offset: calc(1.25rem + env(safe-area-inset-top, 0px)) !important;
+  }
+
+  html.is-native [data-sonner-toaster] [data-sonner-toast],
+  .is-native [data-sonner-toaster] [data-sonner-toast] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Desktop Web: Strict right-side alignment */
+  @media (min-width: 768px) {
+
+    html:not(.is-native) [data-sonner-toaster][data-x-position="right"],
+    html:not(.is-native) [data-sonner-toaster] {
+      right: 1.5rem !important;
+      left: auto !important;
+      transform: none !important;
+      top: 1.25rem !important;
+      --offset: 1.25rem !important;
+    }
+  }
+}
+
+/*
+  Onboarding pre-React cover — set synchronously by the inline <script> in
+  layout.tsx before React loads. Covers the page with the same background
+  color as the OnboardingIntro overlay so there is zero flash of page content
+  between HTML render and the React component mounting.
+  Removed by OnboardingIntro itself once it has mounted.
+*/
+html[data-pending-onboarding="true"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #0b141a;
+  z-index: 99;
+  /* below OnboardingIntro (z-[100]) so React takes over cleanly */
+  pointer-events: none;
+}
+
+/* Bus Name Board / Marquee Animation for Overflowing Header Text */
+@keyframes busMarquee {
+
+  0%,
+  20% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-bus-marquee {
+  display: inline-flex !important;
+  white-space: nowrap !important;
+  animation: busMarquee 12s linear infinite;
+  animation-delay: 1.5s;
+  will-change: transform;
+}
+
+.animate-bus-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide WebKit native video controls, play buttons and overlays in Android/iOS WebViews */
+video::-webkit-media-controls {
+  display: none !important;
+  opacity: 0 !important;
+  -webkit-appearance: none;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}

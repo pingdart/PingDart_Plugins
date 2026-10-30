@@ -1,9 +1,9 @@
 {
   "name": "frontend",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "scripts": {
-    "dev": "node scripts/serve.js --dev",
+    "dev": "npx cross-env NODE_OPTIONS=--max-old-space-size=2048 next dev --turbo -H 0.0.0.0 -p 4026",
     "dev:webpack": "npx cross-env NODE_OPTIONS=--max-old-space-size=2048 next dev -H 0.0.0.0 -p 4026",
     "dev:turbo": "npx cross-env NODE_OPTIONS=--max-old-space-size=2048 next dev --turbo -H 0.0.0.0 -p 4026",
     "dev:clean": "node -e \"try { require('fs').rmSync('.next', { recursive: true, force: true }); } catch (e) {}\" && npx cross-env NODE_OPTIONS=--max-old-space-size=2048 next dev --turbo -H 0.0.0.0 -p 4026",
@@ -24,6 +24,7 @@
     "build:ios": "npm run prebuild && npx cross-env NODE_OPTIONS=--max-old-space-size=4096 NEXT_OUTPUT_EXPORT=true next build && npx cap sync ios && npx cap open ios",
     "build:desktop": "npm run prebuild && npx cross-env NODE_OPTIONS=--max-old-space-size=4096 NEXT_OUTPUT_EXPORT=true next build && npx cap sync @capacitor-community/electron",
     "postinstall": "node scripts/patch-libsignal.js && node scripts/patch-native-run.js",
+    "dev:serve": "node scripts/serve.js --dev",
     "serve": "node scripts/serve.js"
   },
   "dependencies": {

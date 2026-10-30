@@ -1,6 +1,6 @@
 {
   "name": "pingdart-mailserver-backend",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "High-performance real-time Node.js backend for PingDart MailServer",
   "main": "src/app.js",
   "scripts": {

@@ -59,10 +59,11 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     if (isExport) return [];
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://192.168.0.197:4025';
+    const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:4025';
     return [
       { source: '/index.html', destination: '/' },
       { source: '/index.php', destination: '/' },
+      { source: '/api/:path*', destination: `${backendUrl}/api/:path*` },
       { source: '/uploads/:path*', destination: `${backendUrl}/uploads/:path*` },
     ];
   },

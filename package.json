@@ -1,6 +1,6 @@
 {
   "name": "pingdart-protected-release",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "scripts": {
     "start:apis": "cd Apis && npm start",
