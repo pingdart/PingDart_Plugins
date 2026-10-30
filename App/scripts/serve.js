@@ -45,12 +45,13 @@ function broadcastReload() {
   }
 }
 
-// ── Transpile & Watch Custom Developer Modules (Dev Mode) ────────────────────
+// ── Universal Multi-Developer Module Auto-Discovery & Compiler ──────────────
+let discoveredModulesList = [];
 let customModuleBundle = '';
 
-function compileCustomModules() {
-  const customDir = path.join(SRC_DIR, 'modules/custom');
-  if (!fs.existsSync(customDir)) return;
+function scanAndCompileModules() {
+  const modulesDir = path.join(SRC_DIR, 'modules');
+  if (!fs.existsSync(modulesDir)) return;
 
   try {
     let ts;
@@ -58,58 +59,112 @@ function compileCustomModules() {
       ts = require('typescript');
     } catch (_) {}
 
-    const files = fs.readdirSync(customDir);
-    let bundled = '/* PingDart Developer Custom Module Dev Bundle */\n';
+    const entries = fs.readdirSync(modulesDir);
+    const discovered = [];
+    let bundled = '/* PingDart Universal Multi-Developer Auto-Discovery Bundle */\n';
     bundled += 'window.__PD_CUSTOM_MODULES__ = window.__PD_CUSTOM_MODULES__ || {};\n';
+    bundled += 'window.__PD_DISCOVERED_MANIFESTS__ = window.__PD_DISCOVERED_MANIFESTS__ || [];\n\n';
 
-    files.forEach((f) => {
-      const fPath = path.join(customDir, f);
-      if (fs.statSync(fPath).isFile() && (f.endsWith('.tsx') || f.endsWith('.ts') || f.endsWith('.js'))) {
-        const raw = fs.readFileSync(fPath, 'utf8');
-        let code = raw;
-        if (ts && (f.endsWith('.tsx') || f.endsWith('.ts'))) {
-          code = ts.transpileModule(raw, {
-            compilerOptions: {
-              jsx: ts.JsxEmit.React,
-              module: ts.ModuleKind.None,
-              target: ts.ScriptTarget.ES2020,
-              removeComments: false
-            }
-          }).outputText;
-        }
-        bundled += `\n/* File: ${f} */\n(function(){\n${code}\n})();\n`;
+    entries.forEach((modDirName) => {
+      const modPath = path.join(modulesDir, modDirName);
+      if (!fs.existsSync(modPath) || !fs.statSync(modPath).isDirectory()) return;
+
+      const manifestPath = path.join(modPath, 'manifest.json');
+      let manifestData = null;
+      if (fs.existsSync(manifestPath)) {
+        try {
+          manifestData = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+        } catch (_) {}
       }
+
+      if (!manifestData) {
+        manifestData = {
+          id: modDirName.toLowerCase(),
+          name: modDirName.charAt(0).toUpperCase() + modDirName.slice(1) + ' Plugin',
+          category: 'Developer Plugins',
+          desc: `Custom developer module: ${modDirName}`,
+          longDesc: `Dynamic developer module located at src/modules/${modDirName}. Seamlessly integrates with PingDart platform.`,
+          nav: modDirName,
+          status: 'Active',
+          accentColor: 'from-indigo-500 to-purple-600',
+          badgeColor: 'bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border-indigo-200 dark:border-indigo-900',
+          metrics: [
+            { label: 'Module ID', value: modDirName },
+            { label: 'Status', value: 'Active' },
+            { label: 'Auto Discovered', value: 'Yes' }
+          ],
+          features: [
+            `Self-contained module in src/modules/${modDirName}`,
+            'Zero hardcoding in src/modules/index.ts required',
+            'Live hot-reloading active'
+          ]
+        };
+      }
+
+      discovered.push(manifestData);
+
+      // Transpile all screen files (.tsx, .ts, .jsx, .js) in this module directory
+      const modFiles = fs.readdirSync(modPath);
+      modFiles.forEach((f) => {
+        const fPath = path.join(modPath, f);
+        if (fs.statSync(fPath).isFile() && (f.endsWith('.tsx') || f.endsWith('.ts') || f.endsWith('.jsx') || f.endsWith('.js'))) {
+          const raw = fs.readFileSync(fPath, 'utf8');
+          let code = raw;
+          if (ts && (f.endsWith('.tsx') || f.endsWith('.ts') || f.endsWith('.jsx'))) {
+            try {
+              code = ts.transpileModule(raw, {
+                compilerOptions: {
+                  jsx: ts.JsxEmit.React,
+                  module: ts.ModuleKind.None,
+                  target: ts.ScriptTarget.ES2020,
+                  removeComments: false
+                }
+              }).outputText;
+            } catch (_) {}
+          }
+          bundled += `\n/* Module: ${modDirName} | File: ${f} */\n(function(){\n${code}\n})();\n`;
+        }
+      });
     });
 
+    bundled += `\nwindow.__PD_DISCOVERED_MANIFESTS__ = ${JSON.stringify(discovered)};\n`;
+    bundled += `try {\n`;
+    bundled += `  if (window.__PD_REGISTRY__) {\n`;
+    bundled += `    window.__PD_DISCOVERED_MANIFESTS__.forEach(function(m) { window.__PD_REGISTRY__.register(m); });\n`;
+    bundled += `  }\n`;
+    bundled += `} catch (_) {}\n`;
+
+    discoveredModulesList = discovered;
     customModuleBundle = bundled;
     const outDevDir = path.join(OUT_DIR, '_custom_dev');
     if (!fs.existsSync(outDevDir)) fs.mkdirSync(outDevDir, { recursive: true });
     fs.writeFileSync(path.join(outDevDir, 'custom_module.js'), bundled, 'utf8');
-    console.log(`  [Dev Mode] Recompiled custom screens from src/modules/custom (${files.length} files)`);
+    fs.writeFileSync(path.join(outDevDir, 'discovered_modules.json'), JSON.stringify(discovered, null, 2), 'utf8');
+    console.log(`  [Dev Mode] Auto-discovered ${discovered.length} developer modules: [${discovered.map(d => d.id).join(', ')}]`);
   } catch (err) {
-    console.warn(`  [Dev Mode] Module compilation warning: ${err.message}`);
+    console.warn(`  [Dev Mode] Module auto-discovery warning: ${err.message}`);
   }
 }
 
 if (IS_DEV) {
-  compileCustomModules();
+  scanAndCompileModules();
 
-  const customDir = path.join(SRC_DIR, 'modules/custom');
-  if (fs.existsSync(customDir)) {
+  const modulesDir = path.join(SRC_DIR, 'modules');
+  if (fs.existsSync(modulesDir)) {
     try {
       let debounceTimer = null;
-      fs.watch(customDir, { recursive: true }, (event, filename) => {
+      fs.watch(modulesDir, { recursive: true }, (event, filename) => {
         if (!filename) return;
         if (debounceTimer) clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
-          console.log(`  [Dev Mode] Detected change in custom screen: ${filename}`);
-          compileCustomModules();
+          console.log(`  [Dev Mode] Detected change in developer module: ${filename}`);
+          scanAndCompileModules();
           broadcastReload();
         }, 150);
       });
-      console.log(`  👀 Watching src/modules/custom for live developer screen changes...`);
+      console.log(`  👀 Watching src/modules for multi-developer module additions & live changes...`);
     } catch (err) {
-      console.warn(`  ⚠️ Could not watch src/modules/custom: ${err.message}`);
+      console.warn(`  ⚠️ Could not watch src/modules: ${err.message}`);
     }
   }
 }
@@ -155,6 +210,12 @@ function resolveStaticFile(urlPath) {
     if (fs.existsSync(devBundlePath)) return devBundlePath;
   }
 
+  // Handle discovered modules json
+  if (cleanPath === '/_custom_dev/discovered_modules.json') {
+    const devJsonPath = path.join(OUT_DIR, '_custom_dev/discovered_modules.json');
+    if (fs.existsSync(devJsonPath)) return devJsonPath;
+  }
+
   const direct = path.join(OUT_DIR, cleanPath);
 
   // 1. Direct file
@@ -173,7 +234,7 @@ function resolveStaticFile(urlPath) {
     return direct + '.html';
   }
 
-  // 4. Portal Apps dynamic route fallback (e.g. /portal/apps/custom)
+  // 4. Portal Apps dynamic route fallback (e.g. /portal/apps/custom, /portal/apps/xyz)
   if (cleanPath.startsWith('/portal/apps/')) {
     const portalAppsDefault = path.join(OUT_DIR, 'portal/apps/default.html');
     if (fs.existsSync(portalAppsDefault)) return portalAppsDefault;
@@ -215,6 +276,17 @@ const server = http.createServer((req, res) => {
     res.write('data: connected\n\n');
     devClients.add(res);
     req.on('close', () => devClients.delete(res));
+    return;
+  }
+
+  // Discovered modules API endpoint
+  if (reqUrl === '/api/modules/discovered' || reqUrl === '/api/modules/local-discovered') {
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache',
+      'Access-Control-Allow-Origin': '*'
+    });
+    res.end(JSON.stringify({ success: true, modules: discoveredModulesList }));
     return;
   }
 
@@ -279,13 +351,13 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, HOST, () => {
-  const modeText = IS_DEV ? '⚡ DEV MODE (Live Screen Reload Active)' : '🚀 LIVE BUILD MODE';
+  const modeText = IS_DEV ? '⚡ DEV MODE (Multi-Developer Auto-Discovery & Live Screen Reload)' : '🚀 LIVE BUILD MODE';
   console.log(`\n   ▲ PingDart Web Server [${modeText}]`);
   console.log(`   - Local:        http://localhost:${PORT}`);
   console.log(`   - Network:      http://${HOST}:${PORT}`);
   console.log(`   - Backend API:  ${BACKEND_URL}`);
   if (IS_DEV) {
-    console.log(`   - Auto-watch:   src/modules/custom (edit screens to hot-reload)`);
+    console.log(`   - Auto-watch:   src/modules/* (any folder with manifest.json auto-discovers live)`);
   }
   console.log(`\n ✓ Serving frontend bundle from out/`);
   console.log(` ✓ Ready on port ${PORT}\n`);
